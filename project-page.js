@@ -21,7 +21,6 @@
       fileBase: fileBase,
       bust: bust,
       lightbox: lightbox,
-      preferFullSize: true,
     });
   }
 

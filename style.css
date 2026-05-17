@@ -512,42 +512,6 @@ p:last-child {
   display: none !important;
 }
 
-/* Project galleries: full content width, full-size sources (not masonry thumbs) */
-.project-page .gallery-grid {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  gap: var(--gallery-gap);
-  column-width: unset;
-  columns: unset;
-}
-
-.project-page .gallery-item {
-  width: 100%;
-  display: block;
-  break-inside: auto;
-  -webkit-column-break-inside: auto;
-  page-break-inside: auto;
-}
-
-.project-page .gallery-figure {
-  width: 100%;
-  max-width: 100%;
-  margin-inline: auto;
-}
-
-.project-page .gallery-link {
-  display: block;
-  width: 100%;
-}
-
-.project-page .gallery-thumb {
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  max-height: none;
-}
-
 /* Projects: chronological events list */
 .events-section {
   margin-top: var(--section-gap);
