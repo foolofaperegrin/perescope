@@ -1,5 +1,5 @@
 {
-    "version":  1778948978046,
+    "version":  1778968179160,
     "featured":  [
                      {
                          "slug":  "molec",
@@ -69,7 +69,7 @@
                          "slug":  "into-ocean-ice",
                          "title":  "Into Ocean and Ice",
                          "href":  "projects/into-ocean-ice/",
-                         "cover":  "projects/into-ocean-ice/cover.jpg",
+                         "cover":  "projects/into-ocean-ice/cover.png",
                          "featured":  true,
                          "order":  8
                      },
@@ -151,7 +151,7 @@
                          "slug":  "into-ocean-ice",
                          "title":  "Into Ocean and Ice",
                          "href":  "projects/into-ocean-ice/",
-                         "cover":  "projects/into-ocean-ice/cover.jpg",
+                         "cover":  "projects/into-ocean-ice/cover.png",
                          "featured":  true,
                          "order":  8
                      },

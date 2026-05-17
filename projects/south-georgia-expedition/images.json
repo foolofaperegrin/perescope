@@ -1,5 +1,5 @@
 {
-  "version": 1778948978046,
+  "version": 1778968179160,
   "cover": "cover.jpg",
   "hero": "cover.jpg",
   "images": [
@@ -67,16 +67,6 @@
         "file":  "webstuff-p47-058.png",
         "alt":  "webstuff p47 058",
         "thumb":  "thumbs/70bd6386e44fd3.jpg"
-    },
-    {
-        "file":  "webstuff-p48-059.png",
-        "alt":  "webstuff p48 059",
-        "thumb":  "thumbs/aadee6754b85ab.jpg"
-    },
-    {
-        "file":  "webstuff-p49-060.png",
-        "alt":  "webstuff p49 060",
-        "thumb":  "thumbs/6b92dccc33951a.jpg"
     },
     {
         "file":  "webstuff-p50-061.png",
