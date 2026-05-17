@@ -1,0 +1,11 @@
+# One slug per line — order on the main Projects page (top first).
+molec
+no-ordinary-sun
+perescope
+grains
+microfocal-tones
+hoot
+south-georgia-expedition
+iodp-expedition-376
+into-ocean-ice
+wanaka-arts-residency

@@ -1,0 +1,17 @@
+{
+  "version": 1778948978046,
+  "cover": "cover.jpg",
+  "hero": "hero.jpg",
+  "images": [
+    {
+        "file":  "cover.jpg",
+        "alt":  "cover",
+        "thumb":  "thumbs/4b1c59c7728e2b.jpg"
+    },
+    {
+        "file":  "ice20231006173919290.jpg",
+        "alt":  "ice20231006173919290",
+        "thumb":  "thumbs/d9504e13b20cf8.jpg"
+    }
+]
+}

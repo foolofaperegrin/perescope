@@ -1,0 +1,11 @@
+{
+  "name": "perescope-site",
+  "private": true,
+  "scripts": {
+    "build:gallery": "node scripts/build-gallery.mjs",
+    "build:projects": "node scripts/build-projects.mjs"
+  },
+  "devDependencies": {
+    "sharp": "^0.33.5"
+  }
+}

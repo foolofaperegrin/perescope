@@ -1,0 +1,44 @@
+# Regenerates media/gallery/images.json when files under media/gallery/ change.
+# Skips runs triggered by the manifest-only bot commit (message contains [gallery-manifest]).
+name: Update gallery manifest
+
+on:
+  push:
+    branches: [main, master]
+    paths:
+      - "media/gallery/**"
+      - "scripts/build-gallery.mjs"
+      - "scripts/build-gallery.ps1"
+      - "package.json"
+
+permissions:
+  contents: write
+
+jobs:
+  manifest:
+    if: ${{ !contains(github.event.head_commit.message, '[gallery-manifest]') }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies (sharp for thumbnails)
+        run: npm install
+
+      - name: Build gallery manifest and thumbnails
+        run: node scripts/build-gallery.mjs
+
+      - name: Commit manifest if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add media/gallery/images.json media/gallery/thumbs
+          if git diff --staged --quiet; then
+            echo "No manifest changes."
+          else
+            git commit -m "chore: regenerate gallery manifest [gallery-manifest]"
+            git push
+          fi

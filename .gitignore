@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+
+# Local Python libs (extract-webstuff-pdf.py)
+scripts/.pylibs/
+
+# Build / tool logs
+*.log
+
+# PDF extraction output (regenerate with scripts/extract-webstuff-pdf.py)
+scripts/webstuff-extract.txt
+media/projects/
+
+# Reference clones — not part of the live site (nested .git repos)
+awesome-css-frameworks/
+pure/
+
+# OS & editor noise
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*~
+
+# Env / secrets (none in repo today; keep out if added later)
+.env
+.env.*
