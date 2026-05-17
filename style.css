@@ -290,6 +290,22 @@ p:last-child {
   }
 }
 
+.project-embed--bandcamp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.project-embed--bandcamp iframe {
+  display: block;
+  width: 100%;
+  max-width: 25rem;
+  height: 25.375rem;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: var(--color-bg-muted);
+}
+
 .project-embed__link {
   margin: 0.5rem 0 0;
   font-size: var(--text-step--1);
