@@ -1,5 +1,5 @@
 {
-  "version": 1779169472268,
+  "version": 1779170570002,
   "cover": "cover.PNG",
   "hero": "hero.mp4",
   "images": [
@@ -7,6 +7,11 @@
       "file": "cover.PNG",
       "alt": "cover",
       "thumb": "thumbs/0d8b16d189f1e3.jpg"
+    },
+    {
+      "file": "bigbird.png",
+      "alt": "bigbird",
+      "thumb": "thumbs/6b3228de19f16b.jpg"
     },
     {
       "file": "Hyde_Peregrin_A2_Comparison.jpg",
@@ -19,11 +24,26 @@
       "thumb": "thumbs/516a08d53cad57.jpg"
     },
     {
+      "file": "shot_compressed.jpg",
+      "alt": "shot compressed",
+      "thumb": "thumbs/024f554cc3da65.jpg"
+    },
+    {
+      "file": "waddlecolumn_compressed.jpg",
+      "alt": "waddlecolumn compressed",
+      "thumb": "thumbs/c9550c76103763.jpg"
+    },
+    {
       "file": "walkcycle.mkv",
       "alt": "walkcycle",
       "type": "video",
       "poster": "poster.jpg",
       "thumb": "thumbs/a80c8a4087fe62.jpg"
+    },
+    {
+      "file": "warning_compressed.jpg",
+      "alt": "warning compressed",
+      "thumb": "thumbs/bc900db2a6b89f.jpg"
     },
     {
       "file": "webstuff-p13-006.png",

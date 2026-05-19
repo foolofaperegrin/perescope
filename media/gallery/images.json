@@ -1,5 +1,5 @@
 {
-    "version":  1779123138636,
+    "version":  1779123773348,
     "groups":  [
                    {
                        "folder":  "3D_and_Game",
@@ -61,6 +61,11 @@
                                           "thumb":  "projects/no-ordinary-sun/thumbs/0d8b16d189f1e3.jpg"
                                       },
                                       {
+                                          "file":  "projects/no-ordinary-sun/bigbird.png",
+                                          "alt":  "no ordinary sun - bigbird",
+                                          "thumb":  "projects/no-ordinary-sun/thumbs/6b3228de19f16b.jpg"
+                                      },
+                                      {
                                           "file":  "projects/no-ordinary-sun/Hyde_Peregrin_A2_Comparison.jpg",
                                           "alt":  "no ordinary sun - Hyde Peregrin A2 Comparison",
                                           "thumb":  "projects/no-ordinary-sun/thumbs/bd111819f99e8c.jpg"
@@ -71,9 +76,24 @@
                                           "thumb":  "projects/no-ordinary-sun/thumbs/516a08d53cad57.jpg"
                                       },
                                       {
+                                          "file":  "projects/no-ordinary-sun/shot_compressed.jpg",
+                                          "alt":  "no ordinary sun - shot compressed",
+                                          "thumb":  "projects/no-ordinary-sun/thumbs/024f554cc3da65.jpg"
+                                      },
+                                      {
+                                          "file":  "projects/no-ordinary-sun/waddlecolumn_compressed.jpg",
+                                          "alt":  "no ordinary sun - waddlecolumn compressed",
+                                          "thumb":  "projects/no-ordinary-sun/thumbs/c9550c76103763.jpg"
+                                      },
+                                      {
                                           "file":  "projects/no-ordinary-sun/walkcycle.mkv",
                                           "alt":  "no ordinary sun - walkcycle",
                                           "thumb":  "projects/no-ordinary-sun/thumbs/a80c8a4087fe62.jpg"
+                                      },
+                                      {
+                                          "file":  "projects/no-ordinary-sun/warning_compressed.jpg",
+                                          "alt":  "no ordinary sun - warning compressed",
+                                          "thumb":  "projects/no-ordinary-sun/thumbs/bc900db2a6b89f.jpg"
                                       },
                                       {
                                           "file":  "projects/no-ordinary-sun/webstuff-p13-006.png",
