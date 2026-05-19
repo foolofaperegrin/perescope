@@ -1,5 +1,5 @@
 {
-  "version": 1778999927653,
+  "version": 1779167792767,
   "groups": [
     {
       "folder": "3D_and_Game",
@@ -401,14 +401,24 @@
           "thumb": "thumbs/d93bfc7b5f6986.jpg"
         },
         {
-          "file": "projects/into-ocean-ice/cover.jpg",
+          "file": "projects/into-ocean-ice/cover.png",
           "alt": "into ocean ice — cover",
-          "thumb": "projects/into-ocean-ice/thumbs/4b1c59c7728e2b.jpg"
+          "thumb": "projects/into-ocean-ice/thumbs/f30a202d97fcb7.jpg"
+        },
+        {
+          "file": "projects/into-ocean-ice/ice.jpg",
+          "alt": "into ocean ice — ice",
+          "thumb": "projects/into-ocean-ice/thumbs/88d28f4a269986.jpg"
         },
         {
           "file": "projects/into-ocean-ice/ice20231006173919290.jpg",
           "alt": "into ocean ice — ice20231006173919290",
           "thumb": "projects/into-ocean-ice/thumbs/d9504e13b20cf8.jpg"
+        },
+        {
+          "file": "projects/into-ocean-ice/webstuff-p48-059.png",
+          "alt": "into ocean ice — webstuff p48 059",
+          "thumb": "projects/into-ocean-ice/thumbs/aadee6754b85ab.jpg"
         },
         {
           "file": "projects/wanaka-arts-residency/cover.png",

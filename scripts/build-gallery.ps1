@@ -19,6 +19,7 @@ catch {
 
 $exitCode = 0
 try {
+    . (Join-Path $PSScriptRoot "thumbnail-utils.ps1")
     $ErrorActionPreference = "Stop"
     $root = Split-Path -Parent $PSScriptRoot
     $galleryDir = Join-Path $root "media\gallery"
@@ -164,17 +165,6 @@ try {
         return @($groupList | Sort-Object { $_.folder })
     }
 
-    function Get-ThumbFileName([string] $relFile) {
-        $key = ($relFile -replace "\\", "/")
-        $md5 = [System.Security.Cryptography.MD5]::Create()
-        $hash = $md5.ComputeHash([Text.Encoding]::UTF8.GetBytes($key))
-        $sb = New-Object System.Text.StringBuilder
-        for ($i = 0; $i -lt 7 -and $i -lt $hash.Length; $i++) {
-            [void]$sb.AppendFormat("{0:x2}", $hash[$i])
-        }
-        return $sb.ToString() + ".jpg"
-    }
-
     function Write-JpegThumbnail {
         param(
             [string] $SourcePath,
@@ -261,25 +251,43 @@ try {
     $relFiles = Get-RelImageFiles -Dir $galleryDir
     Write-Host "Found $($relFiles.Count) source image(s) under media/gallery"
 
-    if (Test-Path -LiteralPath $thumbsDir) {
-        Remove-Item -LiteralPath $thumbsDir -Recurse -Force
-    }
     New-Item -ItemType Directory -Path $thumbsDir -Force | Out-Null
 
     Add-Type -AssemblyName System.Drawing
 
     $thumbMap = @{}
+    $thumbCreated = 0
+    $thumbSkipped = 0
+    $cache = Get-ThumbCacheHashtable $thumbsDir
+    $keepDestNames = [System.Collections.Generic.HashSet[string]]::new()
+
     foreach ($rel in $relFiles) {
         $ext = [System.IO.Path]::GetExtension($rel).ToLowerInvariant()
         if ($ext -eq ".svg") { continue }
 
+        $cacheKey = $rel -replace "\\", "/"
         $srcPath = Get-GalleryAbsPath $rel
-        $destName = Get-ThumbFileName $rel
+        $destName = Get-ThumbFileName $cacheKey
         $destPath = Join-Path $thumbsDir $destName
-        if (Write-JpegThumbnail -SourcePath $srcPath -DestPath $destPath -MaxWidth $thumbMaxWidth) {
+        [void]$keepDestNames.Add($destName)
+
+        if (Test-ThumbIsFresh -SrcPath $srcPath -DestPath $destPath -CacheKey $cacheKey -Cache $cache) {
             $thumbMap[$rel] = "thumbs/$destName"
+            $thumbSkipped++
+            continue
+        }
+
+        if (Write-JpegThumbnail -SourcePath $srcPath -DestPath $destPath -MaxWidth $thumbMaxWidth) {
+            $cache[$cacheKey] = Get-SourceFileSha256 $srcPath
+            $thumbMap[$rel] = "thumbs/$destName"
+            $thumbCreated++
         }
     }
+
+    $activeKeys = @($relFiles | ForEach-Object { $_ -replace "\\", "/" })
+    Update-ThumbCacheKeys -Cache $cache -ActiveKeys $activeKeys
+    Remove-OrphanThumbFiles -ThumbsDir $thumbsDir -KeepDestNames $keepDestNames
+    Set-ThumbCacheHashtable -ThumbsDir $thumbsDir -Entries $cache
 
     $imagesByFolder = @{}
     foreach ($rel in $relFiles) {
@@ -340,7 +348,7 @@ try {
     foreach ($g in $groupObjs) {
         $projectImageCount += @($g.images | Where-Object { $_.file -like "projects/*" }).Count
     }
-    Write-Host "Gallery: wrote $($relFiles.Count) media + $projectImageCount project image(s) in $($groupObjs.Count) group(s) -> media/gallery/images.json ($($thumbMap.Count) thumbnails)"
+    Write-Host "Gallery: wrote $($relFiles.Count) media + $projectImageCount project image(s) in $($groupObjs.Count) group(s) -> media/gallery/images.json ($thumbCreated thumbnails built, $thumbSkipped unchanged)"
 }
 catch {
     $exitCode = 1

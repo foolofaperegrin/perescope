@@ -11,10 +11,17 @@
  *
  * A plain-text log is always written to: scripts/build-gallery.log
  */
-import crypto from "crypto";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import {
+  ensureJpegThumb,
+  loadThumbCache,
+  pruneOrphanThumbs,
+  pruneThumbCache,
+  saveThumbCache,
+  thumbFileName,
+} from "./thumbnail-utils.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const logPath = path.join(__dirname, "build-gallery.log");
@@ -74,14 +81,6 @@ try {
       .split("/")
       .map((segment) => humanizeAlt(segment))
       .join(" / ");
-  }
-
-  function thumbFileName(relFile) {
-    const key = toPosix(relFile);
-    return (
-      crypto.createHash("md5").update(key, "utf8").digest("hex").slice(0, 14) +
-      ".jpg"
-    );
   }
 
   function loadProjectSourceMap(rootDir) {
@@ -229,35 +228,43 @@ try {
 
   /** @type {Map<string, string>} */
   const thumbRelByFile = new Map();
+  let thumbCreated = 0;
+  let thumbSkipped = 0;
 
-  if (sharp) {
-    const thumbsDir = path.join(galleryDir, "thumbs");
-    fs.rmSync(thumbsDir, { recursive: true, force: true });
-    fs.mkdirSync(thumbsDir, { recursive: true });
+  const thumbsDir = path.join(galleryDir, "thumbs");
+  fs.mkdirSync(thumbsDir, { recursive: true });
+  const cacheEntries = loadThumbCache(thumbsDir);
+  const keepDestNames = new Set();
 
-    for (const relFile of relFiles) {
-      const ext = path.extname(relFile).toLowerCase();
-      if (ext === ".svg") continue;
+  for (const relFile of relFiles) {
+    const ext = path.extname(relFile).toLowerCase();
+    if (ext === ".svg") continue;
 
-      const srcPath = path.join(galleryDir, ...relFile.split("/"));
-      const destName = thumbFileName(relFile);
-      const destPath = path.join(thumbsDir, destName);
+    const cacheKey = toPosix(relFile);
+    const srcPath = path.join(galleryDir, ...cacheKey.split("/"));
+    const result = await ensureJpegThumb({
+      thumbsDir,
+      cacheKey,
+      srcPath,
+      sharp,
+      cacheEntries,
+      maxWidth: THUMB_MAX_WIDTH,
+    });
 
-      try {
-        await sharp(srcPath)
-          .rotate()
-          .resize({
-            width: THUMB_MAX_WIDTH,
-            withoutEnlargement: true,
-          })
-          .jpeg({ quality: 82, mozjpeg: true })
-          .toFile(destPath);
-        thumbRelByFile.set(relFile, `thumbs/${destName}`);
-      } catch (e) {
-        log("WARN", `Gallery: skip thumb for ${relFile}: ${e.message}`);
-      }
+    if (result.thumbRel) {
+      thumbRelByFile.set(relFile, result.thumbRel);
+      keepDestNames.add(thumbFileName(cacheKey));
+    }
+    if (result.skipped) thumbSkipped += 1;
+    else if (result.created) thumbCreated += 1;
+    else if (result.error) {
+      log("WARN", `Gallery: skip thumb for ${relFile}: ${result.error.message}`);
     }
   }
+
+  pruneThumbCache(cacheEntries, relFiles.map((rel) => toPosix(rel)));
+  pruneOrphanThumbs(thumbsDir, keepDestNames);
+  saveThumbCache(thumbsDir, cacheEntries);
 
   /** @type {Map<string, { file: string, alt: string, thumb?: string }[]>} */
   const imagesByFolder = new Map();
@@ -296,7 +303,11 @@ try {
 
   const summary =
     `Gallery: wrote ${relFiles.length} image(s) in ${groups.length} group(s) → ${path.relative(root, outFile)}` +
-    (sharp ? ` (${thumbRelByFile.size} thumbnails)` : "");
+    (sharp
+      ? ` (${thumbCreated} thumbnails built, ${thumbSkipped} unchanged)`
+      : thumbSkipped > 0
+        ? ` (${thumbSkipped} existing thumbnails reused)`
+        : "");
   log("INFO", summary);
   flushLog("OK");
 } catch (e) {

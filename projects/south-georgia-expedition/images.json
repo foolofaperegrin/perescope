@@ -1,63 +1,77 @@
 {
-  "version": 1779148387764,
+  "version": 1779121160776,
   "cover": "cover.jpg",
   "hero": "cover.jpg",
   "images": [
     {
-      "file": "cover.jpg",
-      "alt": "cover"
+        "file":  "cover.jpg",
+        "alt":  "cover",
+        "thumb":  "thumbs/4b1c59c7728e2b.jpg"
     },
     {
-      "file": "11.jpg",
-      "alt": "11"
+        "file":  "11.jpg",
+        "alt":  "11",
+        "thumb":  "thumbs/62bf1edb36141f.jpg"
     },
     {
-      "file": "15.jpg",
-      "alt": "15"
+        "file":  "15.jpg",
+        "alt":  "15",
+        "thumb":  "thumbs/db3a17f7bcac83.jpg"
     },
     {
-      "file": "5.jpg",
-      "alt": "5"
+        "file":  "5.jpg",
+        "alt":  "5",
+        "thumb":  "thumbs/032b2cc936860b.jpg"
     },
     {
-      "file": "6.jpg",
-      "alt": "6"
+        "file":  "6.jpg",
+        "alt":  "6",
+        "thumb":  "thumbs/18e2999891374a.jpg"
     },
     {
-      "file": "6a.jpg",
-      "alt": "6a"
+        "file":  "6a.jpg",
+        "alt":  "6a",
+        "thumb":  "thumbs/a679cf9f2358d0.jpg"
     },
     {
-      "file": "7d.jpg",
-      "alt": "7d"
+        "file":  "7d.jpg",
+        "alt":  "7d",
+        "thumb":  "thumbs/33c9a804b7f22a.jpg"
     },
     {
-      "file": "9.jpg",
-      "alt": "9"
+        "file":  "9.jpg",
+        "alt":  "9",
+        "thumb":  "thumbs/30e62fddc14c05.jpg"
     },
     {
-      "file": "signal-2023-10-18-121409_005.jpeg",
-      "alt": "signal 2023 10 18 121409 005"
+        "file":  "signal-2023-10-18-121409_005.jpeg",
+        "alt":  "signal 2023 10 18 121409 005",
+        "thumb":  "thumbs/35517fe9a18769.jpg"
     },
     {
-      "file": "signal-2023-10-18-121435_002.jpeg",
-      "alt": "signal 2023 10 18 121435 002"
+        "file":  "signal-2023-10-18-121435_002.jpeg",
+        "alt":  "signal 2023 10 18 121435 002",
+        "thumb":  "thumbs/2931726f52a9af.jpg"
     },
     {
-      "file": "webstuff-p45-056.png",
-      "alt": "webstuff p45 056"
+        "file":  "webstuff-p45-056.png",
+        "alt":  "webstuff p45 056",
+        "thumb":  "thumbs/04a9560ae79d56.jpg"
     },
     {
-      "file": "webstuff-p46-057.png",
-      "alt": "webstuff p46 057"
+        "file":  "webstuff-p46-057.png",
+        "alt":  "webstuff p46 057",
+        "thumb":  "thumbs/8c69b092488a3d.jpg"
     },
     {
-      "file": "webstuff-p47-058.png",
-      "alt": "webstuff p47 058"
+        "file":  "webstuff-p47-058.png",
+        "alt":  "webstuff p47 058",
+        "thumb":  "thumbs/70bd6386e44fd3.jpg"
     },
     {
-      "file": "webstuff-p50-061.png",
-      "alt": "webstuff p50 061"
+        "file":  "webstuff-p50-061.png",
+        "alt":  "webstuff p50 061",
+        "thumb":  "thumbs/98e70fd2ed8e44.jpg"
     }
-  ]
+]
 }

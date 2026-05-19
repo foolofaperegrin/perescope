@@ -1,19 +1,21 @@
 {
-  "version": 1779148387764,
+  "version": 1779121160776,
   "cover": "cover.png",
   "hero": "cover.png",
   "images": [
     {
-      "file": "cover.png",
-      "alt": "cover"
+        "file":  "cover.png",
+        "alt":  "cover",
+        "thumb":  "thumbs/f30a202d97fcb7.jpg"
     },
     {
-      "file": "bioluminescnet.webp",
-      "alt": "bioluminescnet"
+        "file":  "bioluminescnet.webp",
+        "alt":  "bioluminescnet"
     },
     {
-      "file": "editor.png",
-      "alt": "editor"
+        "file":  "editor.png",
+        "alt":  "editor",
+        "thumb":  "thumbs/b89f67dd50af99.jpg"
     }
-  ]
+]
 }

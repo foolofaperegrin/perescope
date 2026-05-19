@@ -5,10 +5,17 @@
  *
  *   npm run build:projects
  */
-import crypto from "crypto";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import {
+  ensureJpegThumb,
+  loadThumbCache,
+  pruneOrphanThumbs,
+  pruneThumbCache,
+  saveThumbCache,
+  thumbFileName,
+} from "./thumbnail-utils.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, "..");
@@ -45,13 +52,6 @@ function humanizeSlug(slug) {
     .replace(/[-_]+/g, " ")
     .replace(/\s+/g, " ")
     .trim();
-}
-
-function thumbFileName(file) {
-  return (
-    crypto.createHash("md5").update(file, "utf8").digest("hex").slice(0, 14) +
-    ".jpg"
-  );
 }
 
 function isImageFile(name) {
@@ -146,37 +146,45 @@ function listGalleryFileNames(dir, coverFile, heroFile, exclude = []) {
 async function buildThumbs(dir, files, sharp) {
   /** @type {Map<string, string>} */
   const thumbRelByFile = new Map();
-  if (!files.length) return thumbRelByFile;
+  const stats = { created: 0, skipped: 0 };
+  if (!files.length) return { thumbRelByFile, stats };
 
   const thumbsDir = path.join(dir, "thumbs");
-  fs.rmSync(thumbsDir, { recursive: true, force: true });
-  if (!sharp) return thumbRelByFile;
-
   fs.mkdirSync(thumbsDir, { recursive: true });
+  const cacheEntries = loadThumbCache(thumbsDir);
+  const keepDestNames = new Set();
 
   for (const file of files) {
     if (path.extname(file).toLowerCase() === ".svg") continue;
 
     const srcPath = path.join(dir, file);
-    const destName = thumbFileName(file);
-    const destPath = path.join(thumbsDir, destName);
+    const result = await ensureJpegThumb({
+      thumbsDir,
+      cacheKey: file,
+      srcPath,
+      sharp,
+      cacheEntries,
+      maxWidth: THUMB_MAX_WIDTH,
+    });
 
-    try {
-      await sharp(srcPath)
-        .rotate()
-        .resize({
-          width: THUMB_MAX_WIDTH,
-          withoutEnlargement: true,
-        })
-        .jpeg({ quality: 82, mozjpeg: true })
-        .toFile(destPath);
-      thumbRelByFile.set(file, `thumbs/${destName}`);
-    } catch (e) {
-      console.warn(`Projects: skip thumb for ${file}: ${e.message}`);
+    if (result.thumbRel) {
+      thumbRelByFile.set(file, result.thumbRel);
+      keepDestNames.add(thumbFileName(file));
+    }
+    if (result.skipped) stats.skipped += 1;
+    else if (result.created) stats.created += 1;
+    else if (result.error) {
+      console.warn(
+        `Projects: skip thumb for ${file}: ${result.error.message}`
+      );
     }
   }
 
-  return thumbRelByFile;
+  pruneThumbCache(cacheEntries, files);
+  pruneOrphanThumbs(thumbsDir, keepDestNames);
+  saveThumbCache(thumbsDir, cacheEntries);
+
+  return { thumbRelByFile, stats };
 }
 
 function decodeHtmlEntities(text) {
@@ -301,7 +309,8 @@ if (!fs.existsSync(projectsDir)) {
 const featuredOrder = loadFeaturedOrder();
 const orderRank = new Map(featuredOrder.map((slug, i) => [slug, i]));
 const version = Date.now();
-let thumbTotal = 0;
+let thumbCreated = 0;
+let thumbSkipped = 0;
 
 const entries = [];
 
@@ -322,8 +331,10 @@ for (const dirent of fs
     : [];
 
   const galleryFiles = listGalleryFileNames(dir, coverFile, heroFile, exclude);
-  const thumbRelByFile = await buildThumbs(dir, galleryFiles, sharp);
-  thumbTotal += thumbRelByFile.size;
+  const thumbResult = await buildThumbs(dir, galleryFiles, sharp);
+  const thumbRelByFile = thumbResult.thumbRelByFile;
+  thumbCreated += thumbResult.stats.created;
+  thumbSkipped += thumbResult.stats.skipped;
 
   const galleryImages = galleryFiles.map((file) => {
     const entry = { file, alt: humanizeAlt(file) };
@@ -389,5 +400,5 @@ fs.writeFileSync(
 );
 
 console.log(
-  `Projects: ${entries.length} project(s), ${featuredOnly.length} featured, ${thumbTotal} thumbnail(s) → ${path.relative(root, manifestFile)}`
+  `Projects: ${entries.length} project(s), ${featuredOnly.length} featured, ${thumbCreated} thumbnail(s) built (${thumbSkipped} unchanged) → ${path.relative(root, manifestFile)}`
 );

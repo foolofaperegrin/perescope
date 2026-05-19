@@ -20,6 +20,8 @@ catch {
 $exitCode = 0
 $script:BuildProjectErrors = New-Object System.Collections.Generic.List[string]
 
+. (Join-Path $PSScriptRoot "thumbnail-utils.ps1")
+
 $root = Split-Path -Parent $PSScriptRoot
 $projectsDir = Join-Path $root "projects"
 $manifestFile = Join-Path $projectsDir "manifest.json"
@@ -120,16 +122,6 @@ function Get-GalleryFileNames([string] $dir, [string] $coverFile, [string] $hero
     return $rest
 }
 
-function Get-ThumbFileName([string] $fileName) {
-    $md5 = [System.Security.Cryptography.MD5]::Create()
-    $hash = $md5.ComputeHash([Text.Encoding]::UTF8.GetBytes($fileName))
-    $sb = New-Object System.Text.StringBuilder
-    for ($i = 0; $i -lt 7 -and $i -lt $hash.Length; $i++) {
-        [void]$sb.AppendFormat("{0:x2}", $hash[$i])
-    }
-    return $sb.ToString() + ".jpg"
-}
-
 function Write-JpegThumbnail {
     param(
         [string] $SourcePath,
@@ -187,13 +179,15 @@ function Write-JpegThumbnail {
 
 function Build-ProjectThumbs([string] $dir, [string[]] $galleryFiles) {
     $thumbMap = @{}
-    if (-not $galleryFiles -or $galleryFiles.Count -eq 0) { return $thumbMap }
+    $stats = @{ created = 0; skipped = 0 }
+    if (-not $galleryFiles -or $galleryFiles.Count -eq 0) {
+        return @{ map = $thumbMap; stats = $stats }
+    }
 
     $thumbsDir = Join-Path $dir "thumbs"
-    if (Test-Path -LiteralPath $thumbsDir) {
-        Remove-Item -LiteralPath $thumbsDir -Recurse -Force
-    }
     New-Item -ItemType Directory -Path $thumbsDir -Force | Out-Null
+    $cache = Get-ThumbCacheHashtable $thumbsDir
+    $keepDestNames = [System.Collections.Generic.HashSet[string]]::new()
 
     foreach ($file in $galleryFiles) {
         if ($file -match '\.svg$') { continue }
@@ -205,11 +199,35 @@ function Build-ProjectThumbs([string] $dir, [string[]] $galleryFiles) {
         $srcPath = Join-Path $dir $file
         $destName = Get-ThumbFileName $file
         $destPath = Join-Path $thumbsDir $destName
-        if (Write-JpegThumbnail -SourcePath $srcPath -DestPath $destPath) {
+        [void]$keepDestNames.Add($destName)
+
+        if (Test-ThumbIsFresh -SrcPath $srcPath -DestPath $destPath -CacheKey $file -Cache $cache) {
             $thumbMap[$file] = "thumbs/$destName"
+            $stats.skipped++
+            continue
+        }
+        if ((Test-Path -LiteralPath $destPath) -and -not $cache.ContainsKey($file)) {
+            try {
+                $cache[$file] = Get-SourceFileSha256 $srcPath
+                $thumbMap[$file] = "thumbs/$destName"
+                $stats.skipped++
+                continue
+            }
+            catch { }
+        }
+
+        if (Write-JpegThumbnail -SourcePath $srcPath -DestPath $destPath) {
+            $cache[$file] = Get-SourceFileSha256 $srcPath
+            $thumbMap[$file] = "thumbs/$destName"
+            $stats.created++
         }
     }
-    return $thumbMap
+
+    Update-ThumbCacheKeys -Cache $cache -ActiveKeys $galleryFiles
+    Remove-OrphanThumbFiles -ThumbsDir $thumbsDir -KeepDestNames $keepDestNames
+    Set-ThumbCacheHashtable -ThumbsDir $thumbsDir -Entries $cache
+
+    return @{ map = $thumbMap; stats = $stats }
 }
 
 function Get-GalleryImages([string] $dir, [string] $coverFile, [string] $heroFile, [string[]] $exclude, [hashtable] $thumbMap) {
@@ -322,7 +340,8 @@ for ($i = 0; $i -lt $featuredOrder.Count; $i++) {
 
 $version = [int64]([DateTime]::UtcNow - [datetime]'1970-01-01T00:00:00Z').TotalMilliseconds
 $entries = New-Object System.Collections.Generic.List[object]
-$thumbTotal = 0
+$thumbCreated = 0
+$thumbSkipped = 0
 
 Add-Type -AssemblyName System.Drawing
 
@@ -356,8 +375,10 @@ Add-Type -AssemblyName System.Drawing
         $coverFile = Get-CoverFileName $dir
         $heroFile = Get-HeroFileName $dir $coverFile
         $galleryFiles = Get-GalleryFileNames $dir $coverFile $heroFile $exclude
-        $thumbMap = Build-ProjectThumbs $dir $galleryFiles
-        $thumbTotal += $thumbMap.Count
+        $thumbResult = Build-ProjectThumbs $dir $galleryFiles
+        $thumbMap = $thumbResult.map
+        $thumbCreated += $thumbResult.stats.created
+        $thumbSkipped += $thumbResult.stats.skipped
         $galleryImages = Get-GalleryImages $dir $coverFile $heroFile $exclude $thumbMap
 
         $coverJson = if ($coverFile) { ($coverFile | ConvertTo-Json) } else { 'null' }
@@ -422,7 +443,7 @@ Add-Type -AssemblyName System.Drawing
     $utf8 = New-Object System.Text.UTF8Encoding $false
     [System.IO.File]::WriteAllText($manifestFile, $json, $utf8)
 
-    Write-Host "Projects: $($all.Count) project(s), $($featuredList.Count) featured, $thumbTotal thumbnail(s) -> projects/manifest.json"
+    Write-Host "Projects: $($all.Count) project(s), $($featuredList.Count) featured, $thumbCreated thumbnail(s) built ($thumbSkipped unchanged) -> projects/manifest.json"
 
     if ($script:BuildProjectErrors.Count -gt 0) {
         Write-Host ""

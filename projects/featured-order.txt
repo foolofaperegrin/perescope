@@ -1,5 +1,4 @@
 # One slug per line — order on the main Projects page (top first).
-falling-sand
 molec
 no-ordinary-sun
 perescope
@@ -10,3 +9,4 @@ south-georgia-expedition
 iodp-expedition-376
 into-ocean-ice
 wanaka-arts-residency
+falling-sand
