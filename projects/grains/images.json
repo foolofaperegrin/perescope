@@ -1,17 +1,17 @@
 {
-  "version": 1779121160776,
+  "version": 1779169065074,
   "cover": "cover.jpg",
   "hero": "cover.jpg",
   "images": [
     {
-        "file":  "cover.jpg",
-        "alt":  "cover",
-        "thumb":  "thumbs/4b1c59c7728e2b.jpg"
+      "file": "cover.jpg",
+      "alt": "cover",
+      "thumb": "thumbs/4b1c59c7728e2b.jpg"
     },
     {
-        "file":  "559708273_18104116114716611_4541746565495941272_n.jpg",
-        "alt":  "559708273 18104116114716611 4541746565495941272 n",
-        "thumb":  "thumbs/cfde76f4f10879.jpg"
+      "file": "559708273_18104116114716611_4541746565495941272_n.jpg",
+      "alt": "559708273 18104116114716611 4541746565495941272 n",
+      "thumb": "thumbs/cfde76f4f10879.jpg"
     }
-]
+  ]
 }

@@ -5,6 +5,8 @@
  *   <div class="gallery-mount" data-gallery-heading="…" …></div>
  */
 (function (global) {
+  const VIDEO_EXT = /\.(mp4|webm|mkv|mov|m4v|ogv)$/i;
+
   const CLASSES = {
     mount: "gallery-mount",
     section: "project-gallery-section",
@@ -17,6 +19,18 @@
     link: "gallery-link",
     thumb: "gallery-thumb",
   };
+
+  function isVideoEntry(entry, file) {
+    if (typeof entry === "object" && entry && entry.type === "video") return true;
+    return file && VIDEO_EXT.test(String(file));
+  }
+
+  function posterRelFromEntry(entry) {
+    if (typeof entry === "object" && entry && entry.poster) {
+      return String(entry.poster);
+    }
+    return "";
+  }
 
   function withCacheBust(url, token) {
     const sep = url.indexOf("?") >= 0 ? "&" : "?";
@@ -70,12 +84,20 @@
   function entryToSlide(entry, fileBase, bust) {
     const file = fileFromEntry(entry);
     const base = normalizeFileBase(fileBase);
-    return {
+    const slide = {
       src: withCacheBust(base + encodePathSegments(file), bust),
       alt: altFromEntry(entry, file),
       file: file,
       thumbRel: thumbRelFromEntry(entry),
     };
+    if (isVideoEntry(entry, file)) {
+      slide.type = "video";
+      const posterRel = posterRelFromEntry(entry) || thumbRelFromEntry(entry);
+      if (posterRel) {
+        slide.poster = withCacheBust(base + encodePathSegments(posterRel), bust);
+      }
+    }
+    return slide;
   }
 
   function slidesFromEntries(entries, defaultBase, bust) {
@@ -103,6 +125,7 @@
     const alt = altFromEntry(entry, file);
     const thumbRel = thumbRelFromEntry(entry);
     const slide = slides[slideIndex];
+    const isVideo = isVideoEntry(entry, file);
     const displaySrcRaw = options.preferFullSize
       ? entryBase + encodePathSegments(file)
       : thumbRel
@@ -110,7 +133,7 @@
         : entryBase + encodePathSegments(file);
 
     const li = document.createElement("li");
-    li.className = CLASSES.item;
+    li.className = isVideo ? CLASSES.item + " gallery-item--video" : CLASSES.item;
 
     const figure = document.createElement("figure");
     figure.className = CLASSES.figure;
@@ -118,15 +141,25 @@
     const a = document.createElement("a");
     a.className = CLASSES.link;
     a.href = slide.src;
+    if (isVideo) {
+      a.setAttribute("aria-label", (alt || file) + " — play video");
+    }
 
-    const img = document.createElement("img");
-    img.className = CLASSES.thumb;
-    img.src = withCacheBust(displaySrcRaw, bust);
-    img.alt = alt;
-    img.loading = "lazy";
-    img.decoding = "async";
-    img.fetchPriority = "low";
-    mildProtectImage(img);
+    if (isVideo && !thumbRel) {
+      const placeholder = document.createElement("span");
+      placeholder.className = CLASSES.thumb + " gallery-thumb--video";
+      a.appendChild(placeholder);
+    } else {
+      const img = document.createElement("img");
+      img.className = CLASSES.thumb;
+      img.src = withCacheBust(displaySrcRaw, bust);
+      img.alt = alt;
+      img.loading = "lazy";
+      img.decoding = "async";
+      img.fetchPriority = "low";
+      mildProtectImage(img);
+      a.appendChild(img);
+    }
 
     a.addEventListener("click", function (e) {
       if (e.button !== 0) return;
@@ -134,13 +167,17 @@
       e.preventDefault();
       lightbox.open(
         slides.map(function (s) {
-          return { src: s.src, alt: s.alt };
+          const item = { src: s.src, alt: s.alt };
+          if (s.type === "video") {
+            item.type = "video";
+            if (s.poster) item.poster = s.poster;
+          }
+          return item;
         }),
         slideIndex
       );
     });
 
-    a.appendChild(img);
     figure.appendChild(a);
     li.appendChild(figure);
     grid.appendChild(li);

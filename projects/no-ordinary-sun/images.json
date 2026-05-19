@@ -1,52 +1,64 @@
 {
-  "version": 1779121160776,
+  "version": 1779169065074,
   "cover": "cover.PNG",
-  "hero": "hero.jpg",
+  "hero": "hero.mp4",
   "images": [
     {
-        "file":  "cover.PNG",
-        "alt":  "cover",
-        "thumb":  "thumbs/0d8b16d189f1e3.jpg"
+      "file": "cover.PNG",
+      "alt": "cover",
+      "thumb": "thumbs/0d8b16d189f1e3.jpg"
     },
     {
-        "file":  "Hyde_Peregrin_A2_Comparison.jpg",
-        "alt":  "Hyde Peregrin A2 Comparison",
-        "thumb":  "thumbs/bd111819f99e8c.jpg"
+      "file": "Hyde_Peregrin_A2_Comparison.jpg",
+      "alt": "Hyde Peregrin A2 Comparison",
+      "thumb": "thumbs/bd111819f99e8c.jpg"
     },
     {
-        "file":  "webstuff-p13-006.png",
-        "alt":  "webstuff p13 006",
-        "thumb":  "thumbs/a23a333dd7f15e.jpg"
+      "file": "poster.jpg",
+      "alt": "poster",
+      "thumb": "thumbs/516a08d53cad57.jpg"
     },
     {
-        "file":  "webstuff-p34-039.png",
-        "alt":  "webstuff p34 039",
-        "thumb":  "thumbs/c86fbc99e32b67.jpg"
+      "file": "walkcycle.mkv",
+      "alt": "walkcycle",
+      "type": "video",
+      "poster": "poster.jpg",
+      "thumb": "thumbs/a80c8a4087fe62.jpg"
     },
     {
-        "file":  "webstuff-p36-043.png",
-        "alt":  "webstuff p36 043",
-        "thumb":  "thumbs/5de228ca008edb.jpg"
+      "file": "webstuff-p13-006.png",
+      "alt": "webstuff p13 006",
+      "thumb": "thumbs/a23a333dd7f15e.jpg"
     },
     {
-        "file":  "webstuff-p40-050.png",
-        "alt":  "webstuff p40 050",
-        "thumb":  "thumbs/b62808cd231b30.jpg"
+      "file": "webstuff-p34-039.png",
+      "alt": "webstuff p34 039",
+      "thumb": "thumbs/c86fbc99e32b67.jpg"
     },
     {
-        "file":  "webstuff-p41-051.png",
-        "alt":  "webstuff p41 051",
-        "thumb":  "thumbs/8f7c81ffc24f54.jpg"
+      "file": "webstuff-p36-043.png",
+      "alt": "webstuff p36 043",
+      "thumb": "thumbs/5de228ca008edb.jpg"
     },
     {
-        "file":  "webstuff-p41-052.png",
-        "alt":  "webstuff p41 052",
-        "thumb":  "thumbs/54bac2950a9412.jpg"
+      "file": "webstuff-p40-050.png",
+      "alt": "webstuff p40 050",
+      "thumb": "thumbs/b62808cd231b30.jpg"
     },
     {
-        "file":  "webstuff-p42-054.png",
-        "alt":  "webstuff p42 054",
-        "thumb":  "thumbs/39874b727f7862.jpg"
+      "file": "webstuff-p41-051.png",
+      "alt": "webstuff p41 051",
+      "thumb": "thumbs/8f7c81ffc24f54.jpg"
+    },
+    {
+      "file": "webstuff-p41-052.png",
+      "alt": "webstuff p41 052",
+      "thumb": "thumbs/54bac2950a9412.jpg"
+    },
+    {
+      "file": "webstuff-p42-054.png",
+      "alt": "webstuff p42 054",
+      "thumb": "thumbs/39874b727f7862.jpg"
     }
-]
+  ]
 }

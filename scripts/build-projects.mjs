@@ -10,9 +10,11 @@ import path from "path";
 import { fileURLToPath } from "url";
 import {
   ensureJpegThumb,
+  ensureVideoFrameThumb,
   loadThumbCache,
   pruneOrphanThumbs,
   pruneThumbCache,
+  resolveFfmpeg,
   saveThumbCache,
   thumbFileName,
 } from "./thumbnail-utils.mjs";
@@ -39,7 +41,16 @@ const HERO_PRIORITY = [
 ];
 
 const IMAGE_EXT = new Set([".jpg", ".jpeg", ".png", ".webp", ".gif", ".avif"]);
+const VIDEO_EXT = new Set([".mp4", ".webm", ".mkv", ".mov", ".m4v", ".ogv"]);
 const SKIP_FILES = new Set(["images.json", "project.json", "index.html"]);
+
+const HERO_VIDEO_PRIORITY = [
+  "hero.mp4",
+  "hero.webm",
+  "hero.mov",
+  "hero.mkv",
+  "hero.m4v",
+];
 
 function humanizeAlt(filename) {
   const base = path.basename(filename, path.extname(filename));
@@ -56,6 +67,10 @@ function humanizeSlug(slug) {
 
 function isImageFile(name) {
   return IMAGE_EXT.has(path.extname(name).toLowerCase());
+}
+
+function isVideoFile(name) {
+  return VIDEO_EXT.has(path.extname(name).toLowerCase());
 }
 
 function isCoverFile(name) {
@@ -91,6 +106,52 @@ function listImageFiles(dir) {
     .filter((name) => !SKIP_FILES.has(name) && isImageFile(name));
 }
 
+function listVideoFiles(dir) {
+  return fs
+    .readdirSync(dir, { withFileTypes: true })
+    .filter((d) => d.isFile())
+    .map((d) => d.name)
+    .filter((name) => !SKIP_FILES.has(name) && isVideoFile(name));
+}
+
+function findVideoPoster(dir, videoFile) {
+  const base = path.basename(videoFile, path.extname(videoFile));
+  const names = fs
+    .readdirSync(dir, { withFileTypes: true })
+    .filter((d) => d.isFile())
+    .map((d) => d.name);
+  const byLower = new Map(names.map((n) => [n.toLowerCase(), n]));
+  const candidates = [
+    `${base}.jpg`,
+    `${base}.jpeg`,
+    `${base}.png`,
+    `${base}.webp`,
+    "poster.jpg",
+    "poster.jpeg",
+    "poster.png",
+  ];
+  for (const cand of candidates) {
+    const hit = byLower.get(cand.toLowerCase());
+    if (hit && isImageFile(hit)) return hit;
+  }
+  return null;
+}
+
+function buildGalleryEntry(file, thumbRelByFile, dir) {
+  const entry = { file, alt: humanizeAlt(file) };
+  if (isVideoFile(file)) {
+    entry.type = "video";
+    const poster = findVideoPoster(dir, file);
+    if (poster) entry.poster = poster;
+    const thumb = thumbRelByFile.get(file);
+    if (thumb) entry.thumb = thumb;
+  } else {
+    const thumb = thumbRelByFile.get(file);
+    if (thumb) entry.thumb = thumb;
+  }
+  return entry;
+}
+
 /** Tile image on projects.html: cover.* → hero.* → any image. */
 function findCoverFile(dir) {
   const files = listImageFiles(dir);
@@ -105,10 +166,16 @@ function findCoverFile(dir) {
   return firstSortedImage(files.slice());
 }
 
-/** Top image on project page: hero.* → cover.* → any image. */
+/** Top media on project page: hero video → hero image → cover.* → any image. */
 function findHeroFile(dir, coverFile) {
+  const videos = listVideoFiles(dir);
+  let hit = findByPriority(videos, HERO_VIDEO_PRIORITY);
+  if (hit) return hit;
+  hit = videos.find((n) => isHeroFile(n));
+  if (hit) return hit;
+
   const files = listImageFiles(dir);
-  let hit = findByPriority(files, HERO_PRIORITY);
+  hit = findByPriority(files, HERO_PRIORITY);
   if (hit) return hit;
   hit = files.find((n) => isHeroFile(n));
   if (hit) return hit;
@@ -125,6 +192,14 @@ function listGalleryFileNames(dir, coverFile, heroFile, exclude = []) {
   const coverLower = coverFile ? coverFile.toLowerCase() : null;
   const heroLower = heroFile ? heroFile.toLowerCase() : null;
 
+  const galleryVideos = listVideoFiles(dir).filter((name) => {
+    const lower = name.toLowerCase();
+    if (heroLower && lower === heroLower) return false;
+    if (isHeroFile(name)) return false;
+    if (excludeLower.has(lower)) return false;
+    return true;
+  });
+
   const rest = listImageFiles(dir)
     .filter((name) => {
       const lower = name.toLowerCase();
@@ -137,10 +212,17 @@ function listGalleryFileNames(dir, coverFile, heroFile, exclude = []) {
     })
     .sort((a, b) => a.localeCompare(b, undefined, { sensitivity: "base" }));
 
+  const merged = [...galleryVideos, ...rest].sort((a, b) =>
+    a.localeCompare(b, undefined, { sensitivity: "base" })
+  );
+
   if (coverFile && !excludeLower.has(coverLower)) {
-    return [coverFile, ...rest];
+    const withoutCover = merged.filter(
+      (n) => n.toLowerCase() !== coverLower
+    );
+    return [coverFile, ...withoutCover];
   }
-  return rest;
+  return merged;
 }
 
 async function buildThumbs(dir, files, sharp) {
@@ -158,14 +240,17 @@ async function buildThumbs(dir, files, sharp) {
     if (path.extname(file).toLowerCase() === ".svg") continue;
 
     const srcPath = path.join(dir, file);
-    const result = await ensureJpegThumb({
+    const thumbOpts = {
       thumbsDir,
       cacheKey: file,
       srcPath,
       sharp,
       cacheEntries,
       maxWidth: THUMB_MAX_WIDTH,
-    });
+    };
+    const result = isVideoFile(file)
+      ? await ensureVideoFrameThumb(thumbOpts)
+      : await ensureJpegThumb(thumbOpts);
 
     if (result.thumbRel) {
       thumbRelByFile.set(file, result.thumbRel);
@@ -302,6 +387,12 @@ try {
   );
 }
 
+if (!(await resolveFfmpeg())) {
+  console.warn(
+    "Projects: ffmpeg not on PATH — video tiles will lack frame thumbnails until ffmpeg is installed."
+  );
+}
+
 if (!fs.existsSync(projectsDir)) {
   fs.mkdirSync(projectsDir, { recursive: true });
 }
@@ -336,12 +427,9 @@ for (const dirent of fs
   thumbCreated += thumbResult.stats.created;
   thumbSkipped += thumbResult.stats.skipped;
 
-  const galleryImages = galleryFiles.map((file) => {
-    const entry = { file, alt: humanizeAlt(file) };
-    const thumb = thumbRelByFile.get(file);
-    if (thumb) entry.thumb = thumb;
-    return entry;
-  });
+  const galleryImages = galleryFiles.map((file) =>
+    buildGalleryEntry(file, thumbRelByFile, dir)
+  );
 
   fs.writeFileSync(
     path.join(dir, "images.json"),

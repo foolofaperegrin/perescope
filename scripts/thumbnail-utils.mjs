@@ -2,9 +2,16 @@
  * Incremental thumbnail helpers — skip sharp when source bytes unchanged.
  * Cache: <thumbsDir>/.thumb-cache.json maps source key → sha256 hex.
  */
+import { execFile } from "child_process";
 import crypto from "crypto";
 import fs from "fs";
 import path from "path";
+import { promisify } from "util";
+
+const execFileAsync = promisify(execFile);
+
+/** @type {string | false | null} */
+let ffmpegCommand = null;
 
 export const THUMB_CACHE_FILENAME = ".thumb-cache.json";
 
@@ -79,6 +86,111 @@ export function pruneOrphanThumbs(thumbsDir, keepDestNames) {
  * @param {number} opts.maxWidth
  * @returns {Promise<{ thumbRel: string | null, created: boolean, skipped: boolean }>}
  */
+export async function resolveFfmpeg() {
+  if (ffmpegCommand !== null) return ffmpegCommand;
+
+  try {
+    const mod = await import("ffmpeg-static");
+    const bundled = mod.default;
+    if (bundled && fs.existsSync(bundled)) {
+      ffmpegCommand = bundled;
+      return ffmpegCommand;
+    }
+  } catch {
+    /* optional package not installed */
+  }
+
+  try {
+    await execFileAsync("ffmpeg", ["-version"], {
+      timeout: 8000,
+      windowsHide: true,
+    });
+    ffmpegCommand = "ffmpeg";
+  } catch {
+    ffmpegCommand = false;
+  }
+  return ffmpegCommand;
+}
+
+/**
+ * Extract one JPEG frame from a video (requires ffmpeg on PATH).
+ * @returns {Promise<{ thumbRel: string | null, created: boolean, skipped: boolean, error?: Error }>}
+ */
+export async function ensureVideoFrameThumb(opts) {
+  const destName = thumbFileName(opts.cacheKey);
+  const destPath = path.join(opts.thumbsDir, destName);
+  const thumbRel = `thumbs/${destName}`;
+  const tmpPath = `${destPath}.part.jpg`;
+
+  if (thumbIsFresh(opts.srcPath, destPath, opts.cacheKey, opts.cacheEntries)) {
+    return { thumbRel, created: false, skipped: true };
+  }
+
+  const ffmpeg = await resolveFfmpeg();
+  if (!ffmpeg) {
+    return {
+      thumbRel: null,
+      created: false,
+      skipped: false,
+      error: new Error("ffmpeg not found on PATH"),
+    };
+  }
+
+  try {
+    await execFileAsync(
+      ffmpeg,
+      [
+        "-y",
+        "-hide_banner",
+        "-loglevel",
+        "error",
+        "-ss",
+        "00:00:01",
+        "-i",
+        opts.srcPath,
+        "-an",
+        "-vframes",
+        "1",
+        "-vf",
+        `scale=${opts.maxWidth}:-2:flags=lanczos`,
+        tmpPath,
+      ],
+      { timeout: 120000, windowsHide: true }
+    );
+
+    if (!fs.existsSync(tmpPath)) {
+      throw new Error("ffmpeg produced no output");
+    }
+
+    if (opts.sharp) {
+      await opts
+        .sharp(tmpPath)
+        .jpeg({ quality: 82, mozjpeg: true })
+        .toFile(destPath);
+      fs.unlinkSync(tmpPath);
+    } else {
+      fs.renameSync(tmpPath, destPath);
+    }
+
+    opts.cacheEntries[opts.cacheKey] = hashFileSync(opts.srcPath);
+    return { thumbRel, created: true, skipped: false };
+  } catch (e) {
+    if (fs.existsSync(tmpPath)) {
+      try {
+        fs.unlinkSync(tmpPath);
+      } catch {
+        /* ignore */
+      }
+    }
+    return {
+      thumbRel: null,
+      created: false,
+      skipped: false,
+      error: e instanceof Error ? e : new Error(String(e)),
+    };
+  }
+}
+
 export async function ensureJpegThumb(opts) {
   const destName = thumbFileName(opts.cacheKey);
   const destPath = path.join(opts.thumbsDir, destName);

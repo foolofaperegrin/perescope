@@ -1,14 +1,16 @@
 {
-    "version":  1,
-    "entries":  {
-                    "Hyde_Peregrin_A2_Comparison.jpg":  "31b2ece2e356c90a408ddc7db91ed8e85956fa20505c40ac8563398c13e23bae",
-                    "webstuff-p42-054.png":  "522249221cd834b33bc1529c84579420e7498d58213297fae08e6c51549c0157",
-                    "webstuff-p40-050.png":  "ccbe437f3463d1bd5757b888f3105006c000d7c495eb326224060d57de07ca01",
-                    "webstuff-p36-043.png":  "905a39068dca95400f9b5ff04018236c9ba395773a5be7178de84bf65347f8f3",
-                    "webstuff-p34-039.png":  "efa4d9a6b947cd59f352a728bd756e56c2df2662a078d1428249c67bca40b641",
-                    "cover.PNG":  "3563fe89861251bf2e31290376c5c17e0e1aac98b08bc9a58b741e94cf86e622",
-                    "webstuff-p13-006.png":  "816179738c132277d1964714f733608198b4ed9eb7a6a8f06f253ef933c6de76",
-                    "webstuff-p41-051.png":  "c1c74846e9d91bd050fd06ee8b3c4489c989e46f971065a922e9574ccb7fe2df",
-                    "webstuff-p41-052.png":  "fb0c12dadde8d1bec7115f6e7effade3b45ccd728adcfd92bf8d5aa067799ea8"
-                }
+  "version": 1,
+  "entries": {
+    "Hyde_Peregrin_A2_Comparison.jpg": "31b2ece2e356c90a408ddc7db91ed8e85956fa20505c40ac8563398c13e23bae",
+    "webstuff-p42-054.png": "522249221cd834b33bc1529c84579420e7498d58213297fae08e6c51549c0157",
+    "webstuff-p40-050.png": "ccbe437f3463d1bd5757b888f3105006c000d7c495eb326224060d57de07ca01",
+    "webstuff-p36-043.png": "905a39068dca95400f9b5ff04018236c9ba395773a5be7178de84bf65347f8f3",
+    "webstuff-p34-039.png": "efa4d9a6b947cd59f352a728bd756e56c2df2662a078d1428249c67bca40b641",
+    "webstuff-p41-052.png": "fb0c12dadde8d1bec7115f6e7effade3b45ccd728adcfd92bf8d5aa067799ea8",
+    "cover.PNG": "3563fe89861251bf2e31290376c5c17e0e1aac98b08bc9a58b741e94cf86e622",
+    "poster.jpg": "bc5d4a1c2aac8ab32d588d2dd1c6aaad20dc8e685a89c9e2acdf516f3a36381d",
+    "webstuff-p13-006.png": "816179738c132277d1964714f733608198b4ed9eb7a6a8f06f253ef933c6de76",
+    "webstuff-p41-051.png": "c1c74846e9d91bd050fd06ee8b3c4489c989e46f971065a922e9574ccb7fe2df",
+    "walkcycle.mkv": "99f3495497f2729f4b6356c93d65fec4452b31404d501cce3f6fbd0d72e5a1a0"
+  }
 }

@@ -1,21 +1,22 @@
 {
-  "version": 1779121160776,
+  "version": 1779169065074,
   "cover": "cover.png",
   "hero": "cover.png",
   "images": [
     {
-        "file":  "cover.png",
-        "alt":  "cover",
-        "thumb":  "thumbs/f30a202d97fcb7.jpg"
+      "file": "cover.png",
+      "alt": "cover",
+      "thumb": "thumbs/f30a202d97fcb7.jpg"
     },
     {
-        "file":  "bioluminescnet.webp",
-        "alt":  "bioluminescnet"
+      "file": "bioluminescnet.webp",
+      "alt": "bioluminescnet",
+      "thumb": "thumbs/0c49926a4c1957.jpg"
     },
     {
-        "file":  "editor.png",
-        "alt":  "editor",
-        "thumb":  "thumbs/b89f67dd50af99.jpg"
+      "file": "editor.png",
+      "alt": "editor",
+      "thumb": "thumbs/b89f67dd50af99.jpg"
     }
-]
+  ]
 }

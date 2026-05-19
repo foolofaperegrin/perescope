@@ -3,11 +3,19 @@ setlocal
 cd /d "%~dp0.."
 echo.
 echo Projects build — updates projects\manifest.json for the main Projects page.
-echo Log: scripts\build-projects.log
-echo For build + error analysis use: scripts\build-projects-log.cmd
 echo.
-powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0build-projects.ps1"
-set ERR=%ERRORLEVEL%
+
+where node >nul 2>&1
+if %ERRORLEVEL% equ 0 (
+  call npm run build:projects
+  set ERR=%ERRORLEVEL%
+) else (
+  echo Node not found — falling back to PowerShell build.
+  echo Log: scripts\build-projects.log
+  powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0build-projects.ps1"
+  set ERR=%ERRORLEVEL%
+)
+
 echo.
 if %ERR% neq 0 (
   echo Build FAILED (exit %ERR%).

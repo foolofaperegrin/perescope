@@ -1,9 +1,9 @@
 {
-    "version":  1,
-    "entries":  {
-                    "MicrobeMondayMagnetotastic-1024x1024.png":  "99911609376e5e773c1ffac4cfefddce977387effca301217dc6cb0f53448f36",
-                    "cover.png":  "06be8728725a1a5049b5ace720c37cc29ed2dfe118de4a2930c2a36bfb203102",
-                    "mmabyss-1024x1024.png":  "353c3de993beab074213d9d672211184cc22daa31cd79e6423e76f5f91446676",
-                    "microbes.png":  "6c4a2092c56e2ef15eb07332c95e16674bc01860a08c027dac33dbe52d2adf57"
-                }
+  "version": 1,
+  "entries": {
+    "MicrobeMondayMagnetotastic-1024x1024.png": "99911609376e5e773c1ffac4cfefddce977387effca301217dc6cb0f53448f36",
+    "cover.png": "06be8728725a1a5049b5ace720c37cc29ed2dfe118de4a2930c2a36bfb203102",
+    "mmabyss-1024x1024.png": "353c3de993beab074213d9d672211184cc22daa31cd79e6423e76f5f91446676",
+    "microbes.png": "6c4a2092c56e2ef15eb07332c95e16674bc01860a08c027dac33dbe52d2adf57"
+  }
 }

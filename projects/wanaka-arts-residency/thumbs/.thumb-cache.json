@@ -1,13 +1,13 @@
 {
-    "version":  1,
-    "entries":  {
-                    "webstuff-p54-064.png":  "fe95c6a79c7ea245e4d75e737ed0697cda7f6129653ff64f74c29e1a579ed1c7",
-                    "webstuff-p60-072.png":  "83c5c28077d2bcb0e53ad51f51c6b63fce7937c6a4b46a8acce4c9843821308f",
-                    "webstuff-p55-067.png":  "a1cdb8bc9fe1e52867ee18d1db44465881c0a58c2677ed02f8d02286393c3636",
-                    "webstuff-p53-063.png":  "992ec317d75b67d0bb9a8b81472d0fe9de33bc31fd21ed4b306cb6abe38ea22c",
-                    "webstuff-p54-065.png":  "cf1018096d945813e35ff11efafd3ed495839413973345709c8292515faae020",
-                    "webstuff-p58-070.png":  "3c17e37e7247b77d97df13e3142c0f83ed7c314c6d9dc363daf065fc8883a63d",
-                    "cover.png":  "6a835d1a9fef460d59052eba28996c60e62d9d42e540e442d25e1b6f3a9583a4",
-                    "webstuff-p55-066.png":  "f832a84e17fff02005d26b77f60005ef05442a375203cc1b2ec325429d750b7f"
-                }
+  "version": 1,
+  "entries": {
+    "webstuff-p54-064.png": "fe95c6a79c7ea245e4d75e737ed0697cda7f6129653ff64f74c29e1a579ed1c7",
+    "webstuff-p60-072.png": "83c5c28077d2bcb0e53ad51f51c6b63fce7937c6a4b46a8acce4c9843821308f",
+    "webstuff-p55-067.png": "a1cdb8bc9fe1e52867ee18d1db44465881c0a58c2677ed02f8d02286393c3636",
+    "webstuff-p53-063.png": "992ec317d75b67d0bb9a8b81472d0fe9de33bc31fd21ed4b306cb6abe38ea22c",
+    "webstuff-p54-065.png": "cf1018096d945813e35ff11efafd3ed495839413973345709c8292515faae020",
+    "webstuff-p58-070.png": "3c17e37e7247b77d97df13e3142c0f83ed7c314c6d9dc363daf065fc8883a63d",
+    "cover.png": "6a835d1a9fef460d59052eba28996c60e62d9d42e540e442d25e1b6f3a9583a4",
+    "webstuff-p55-066.png": "f832a84e17fff02005d26b77f60005ef05442a375203cc1b2ec325429d750b7f"
+  }
 }
