@@ -134,6 +134,15 @@ try {
       if (typeof entry === "object" && entry.thumb) {
         item.thumb = `projects/${slug}/${String(entry.thumb)}`;
       }
+      if (typeof entry === "object" && entry.type) {
+        item.type = String(entry.type);
+      }
+      if (typeof entry === "object" && entry.poster) {
+        const poster = String(entry.poster);
+        item.poster = poster.includes("/")
+          ? poster
+          : `projects/${slug}/${poster}`;
+      }
       out.push(item);
     }
 
