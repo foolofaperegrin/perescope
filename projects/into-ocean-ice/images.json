@@ -1,27 +1,23 @@
 {
-  "version": 1778968179160,
+  "version": 1779148387764,
   "cover": "cover.png",
   "hero": "hero.jpg",
   "images": [
     {
-        "file":  "cover.png",
-        "alt":  "cover",
-        "thumb":  "thumbs/f30a202d97fcb7.jpg"
+      "file": "cover.png",
+      "alt": "cover"
     },
     {
-        "file":  "ice.jpg",
-        "alt":  "ice",
-        "thumb":  "thumbs/88d28f4a269986.jpg"
+      "file": "ice.jpg",
+      "alt": "ice"
     },
     {
-        "file":  "ice20231006173919290.jpg",
-        "alt":  "ice20231006173919290",
-        "thumb":  "thumbs/d9504e13b20cf8.jpg"
+      "file": "ice20231006173919290.jpg",
+      "alt": "ice20231006173919290"
     },
     {
-        "file":  "webstuff-p48-059.png",
-        "alt":  "webstuff p48 059",
-        "thumb":  "thumbs/aadee6754b85ab.jpg"
+      "file": "webstuff-p48-059.png",
+      "alt": "webstuff p48 059"
     }
-]
+  ]
 }

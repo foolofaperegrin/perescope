@@ -1,47 +1,39 @@
 {
-  "version": 1778968179160,
+  "version": 1779148387764,
   "cover": "cover.png",
   "hero": "cover.png",
   "images": [
     {
-        "file":  "cover.png",
-        "alt":  "cover",
-        "thumb":  "thumbs/f30a202d97fcb7.jpg"
+      "file": "cover.png",
+      "alt": "cover"
     },
     {
-        "file":  "webstuff-p53-063.png",
-        "alt":  "webstuff p53 063",
-        "thumb":  "thumbs/9b58a943e72854.jpg"
+      "file": "webstuff-p53-063.png",
+      "alt": "webstuff p53 063"
     },
     {
-        "file":  "webstuff-p54-064.png",
-        "alt":  "webstuff p54 064",
-        "thumb":  "thumbs/2946e6e28e14ac.jpg"
+      "file": "webstuff-p54-064.png",
+      "alt": "webstuff p54 064"
     },
     {
-        "file":  "webstuff-p54-065.png",
-        "alt":  "webstuff p54 065",
-        "thumb":  "thumbs/cbed0c7c4f77c3.jpg"
+      "file": "webstuff-p54-065.png",
+      "alt": "webstuff p54 065"
     },
     {
-        "file":  "webstuff-p55-066.png",
-        "alt":  "webstuff p55 066",
-        "thumb":  "thumbs/399b69ad50f3d6.jpg"
+      "file": "webstuff-p55-066.png",
+      "alt": "webstuff p55 066"
     },
     {
-        "file":  "webstuff-p55-067.png",
-        "alt":  "webstuff p55 067",
-        "thumb":  "thumbs/200e10d866231f.jpg"
+      "file": "webstuff-p55-067.png",
+      "alt": "webstuff p55 067"
     },
     {
-        "file":  "webstuff-p58-070.png",
-        "alt":  "webstuff p58 070",
-        "thumb":  "thumbs/36605513f5e0bb.jpg"
+      "file": "webstuff-p58-070.png",
+      "alt": "webstuff p58 070"
     },
     {
-        "file":  "webstuff-p60-072.png",
-        "alt":  "webstuff p60 072",
-        "thumb":  "thumbs/7af8043003fbb7.jpg"
+      "file": "webstuff-p60-072.png",
+      "alt": "webstuff p60 072"
     }
-]
+  ]
 }

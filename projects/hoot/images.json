@@ -1,6 +1,11 @@
 {
-  "version": 1778968179160,
+  "version": 1779148387764,
   "cover": "webstuff-p16-015.png",
   "hero": "webstuff-p16-015.png",
-  "images": [{"file":"webstuff-p16-015.png","alt":"webstuff p16 015","thumb":"thumbs/d00eb31004ddad.jpg"}]
+  "images": [
+    {
+      "file": "webstuff-p16-015.png",
+      "alt": "webstuff p16 015"
+    }
+  ]
 }

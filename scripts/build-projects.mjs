@@ -1,5 +1,5 @@
 /**
- * Scans projects/*/ for index.html + images, writes:
+ * Scans projects/<slug>/ for index.html + images, writes:
  *   - projects/manifest.json (tiles use cover.*, else hero.*, else first image)
  *   - projects/<slug>/images.json (hero for page top, cover for gallery lead)
  *

@@ -1,27 +1,23 @@
 {
-  "version": 1778968179160,
+  "version": 1779148387764,
   "cover": "cover.png",
   "hero": "hero.jpg",
   "images": [
     {
-        "file":  "cover.png",
-        "alt":  "cover",
-        "thumb":  "thumbs/f30a202d97fcb7.jpg"
+      "file": "cover.png",
+      "alt": "cover"
     },
     {
-        "file":  "MicrobeMondayMagnetotastic-1024x1024.png",
-        "alt":  "MicrobeMondayMagnetotastic 1024x1024",
-        "thumb":  "thumbs/ffcc9b22a1f5f0.jpg"
+      "file": "MicrobeMondayMagnetotastic-1024x1024.png",
+      "alt": "MicrobeMondayMagnetotastic 1024x1024"
     },
     {
-        "file":  "microbes.png",
-        "alt":  "microbes",
-        "thumb":  "thumbs/62d22c4300f326.jpg"
+      "file": "microbes.png",
+      "alt": "microbes"
     },
     {
-        "file":  "mmabyss-1024x1024.png",
-        "alt":  "mmabyss 1024x1024",
-        "thumb":  "thumbs/4bd16d230e65e3.jpg"
+      "file": "mmabyss-1024x1024.png",
+      "alt": "mmabyss 1024x1024"
     }
-]
+  ]
 }

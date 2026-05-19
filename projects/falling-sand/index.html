@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Falling Sand — Projects</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,450&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-logo" href="../../index.html">Peregrin Hyde</a>
+      <nav class="site-nav" aria-label="Primary">
+        <a class="btn" href="../../index.html">Home</a>
+        <a class="btn" href="../../gallery.html">Gallery</a>
+        <a class="btn btn--primary" href="../../projects.html">Projects</a>
+      </nav>
+    </div>
+  </header>
+  <main class="site-main project-page" id="main">
+    <p class="project-page__back muted"><a href="../../projects.html">← All projects</a></p>
+    <p class="project-page__meta">Interactive · Web</p>
+    <h1>Falling Sand</h1>
+    <figure class="project-page__hero project-page__hero--embed">
+      <div class="project-page__hero-embed">
+        <iframe
+          src="https://25-dsdn142.github.io/music-visualiser-foolofaperegrin/"
+          title="Falling Sand — music visualiser"
+          allow="autoplay"
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+          scrolling="no"
+        ></iframe>
+      </div>
+    </figure>
+    <div class="card">
+      <p>Click in the top left corner to run the song and watch the simulation evolve!
+
+        Click anywhere on the screen to spawn your own sand.
+        
+        <p>
+        
+        University Java p5 Creative Coding Project.
+        
+        ​<p>
+        
+        Falling sand simulations, like similar cellular automata, function by creating a two dimensional array of co-ordinate locations representing the screen space, and applying a for loop to scan through the array (from bottom to top) and determine the behaviour of each cell based on a set of simple rules. A cell can be empty (value = 0), or filled (value < 0), and different values can be tied to different behaviours (Custom sands).
+        
+        <p>
+        
+        This simulation also has sand behaviours mapped to music-driven values. The music data was extracted using a machine learning algorithm, and these values drive things such as sand spawn rate, sand spawn type, plant growth and more.
+        
+        <p>
+        
+        The music is <a href="https://grainsnz.bandcamp.com/album/grains">Grains: Succession II</a>, a track that explores the cohesion and conflict between humanity and the natural world. As the track progresses, different paradigms of the simulation emerge. The end is fire.</p>
+    </div>
+    <div class="gallery-mount" hidden></div>
+  </main>
+  <footer class="site-footer">
+    <p class="muted"><a href="../../projects.html">← Back to projects</a></p>
+  </footer>
+  <script src="../../lightbox.js?v=2" defer></script>
+  <script src="../../gallery-grid.js?v=1" defer></script>
+  <script src="../../project-page.js?v=4" defer></script>
+</body>
+</html>

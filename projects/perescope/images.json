@@ -1,6 +1,11 @@
 {
-  "version": 1778968179160,
+  "version": 1779148387764,
   "cover": "cover.jpg",
   "hero": "cover.jpg",
-  "images": [{"file":"cover.jpg","alt":"cover","thumb":"thumbs/4b1c59c7728e2b.jpg"}]
+  "images": [
+    {
+      "file": "cover.jpg",
+      "alt": "cover"
+    }
+  ]
 }
