@@ -100,6 +100,18 @@ try {
             if ($entry.thumb) {
                 $o.thumb = "projects/$slug/$($entry.thumb)"
             }
+            if ($entry.type) {
+                $o | Add-Member -NotePropertyName type -NotePropertyValue ([string]$entry.type)
+            }
+            if ($entry.poster) {
+                $poster = [string]$entry.poster
+                if ($poster -match "[/\\]") {
+                    $o | Add-Member -NotePropertyName poster -NotePropertyValue $poster
+                }
+                else {
+                    $o | Add-Member -NotePropertyName poster -NotePropertyValue "projects/$slug/$poster"
+                }
+            }
             [void]$out.Add([PSCustomObject]$o)
         }
 
