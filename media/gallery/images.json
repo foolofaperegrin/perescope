@@ -1,5 +1,5 @@
 {
-    "version":  1779121992619,
+    "version":  1779122679455,
     "groups":  [
                    {
                        "folder":  "3D_and_Game",
@@ -66,8 +66,14 @@
                                           "thumb":  "projects/no-ordinary-sun/thumbs/bd111819f99e8c.jpg"
                                       },
                                       {
+                                          "file":  "projects/no-ordinary-sun/poster.jpg",
+                                          "alt":  "no ordinary sun - poster",
+                                          "thumb":  "projects/no-ordinary-sun/thumbs/516a08d53cad57.jpg"
+                                      },
+                                      {
                                           "file":  "projects/no-ordinary-sun/walkcycle.mkv",
-                                          "alt":  "no ordinary sun - walkcycle"
+                                          "alt":  "no ordinary sun - walkcycle",
+                                          "thumb":  "projects/no-ordinary-sun/thumbs/a80c8a4087fe62.jpg"
                                       },
                                       {
                                           "file":  "projects/no-ordinary-sun/webstuff-p13-006.png",
@@ -111,7 +117,8 @@
                                       },
                                       {
                                           "file":  "projects/molec/bioluminescnet.webp",
-                                          "alt":  "molec - bioluminescnet"
+                                          "alt":  "molec - bioluminescnet",
+                                          "thumb":  "projects/molec/thumbs/0c49926a4c1957.jpg"
                                       },
                                       {
                                           "file":  "projects/molec/editor.png",
