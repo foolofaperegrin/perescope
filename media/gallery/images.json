@@ -1,499 +1,552 @@
 {
-  "version": 1779170648110,
-  "groups": [
-    {
-      "folder": "3D_and_Game",
-      "title": "3D and Game",
-      "images": [
-        {
-          "file": "3D_and_Game/nos.jpg",
-          "alt": "nos",
-          "thumb": "thumbs/403d9a09aa51de.jpg"
-        },
-        {
-          "file": "3D_and_Game/w.png",
-          "alt": "w",
-          "thumb": "thumbs/814806f3653d78.jpg"
-        },
-        {
-          "file": "3D_and_Game/webstuff-p21-023.png",
-          "alt": "webstuff p21 023",
-          "thumb": "thumbs/5c54a262e50040.jpg"
-        },
-        {
-          "file": "3D_and_Game/webstuff-p22-024.png",
-          "alt": "webstuff p22 024",
-          "thumb": "thumbs/49289663bf41e1.jpg"
-        },
-        {
-          "file": "3D_and_Game/webstuff-p25-030.png",
-          "alt": "webstuff p25 030",
-          "thumb": "thumbs/3d734048e53137.jpg"
-        },
-        {
-          "file": "3D_and_Game/x.png",
-          "alt": "x",
-          "thumb": "thumbs/af2e91c9b2e43c.jpg"
-        },
-        {
-          "file": "3D_and_Game/y.png",
-          "alt": "y",
-          "thumb": "thumbs/fe21768a13cf8d.jpg"
-        },
-        {
-          "file": "3D_and_Game/z.png",
-          "alt": "z",
-          "thumb": "thumbs/6af3906ba2b98b.jpg"
-        },
-        {
-          "file": "3D_and_Game/zz.jpg",
-          "alt": "zz",
-          "thumb": "thumbs/2161699ad09dab.jpg"
-        },
-        {
-          "file": "projects/hoot/webstuff-p16-015.png",
-          "alt": "hoot — webstuff p16 015",
-          "thumb": "projects/hoot/thumbs/d00eb31004ddad.jpg"
-        },
-        {
-          "file": "projects/no-ordinary-sun/cover.PNG",
-          "alt": "no ordinary sun — cover",
-          "thumb": "projects/no-ordinary-sun/thumbs/0d8b16d189f1e3.jpg"
-        },
-        {
-          "file": "projects/no-ordinary-sun/bigbird.png",
-          "alt": "no ordinary sun — bigbird",
-          "thumb": "projects/no-ordinary-sun/thumbs/6b3228de19f16b.jpg"
-        },
-        {
-          "file": "projects/no-ordinary-sun/Hyde_Peregrin_A2_Comparison.jpg",
-          "alt": "no ordinary sun — Hyde Peregrin A2 Comparison",
-          "thumb": "projects/no-ordinary-sun/thumbs/bd111819f99e8c.jpg"
-        },
-        {
-          "file": "projects/no-ordinary-sun/poster.jpg",
-          "alt": "no ordinary sun — poster",
-          "thumb": "projects/no-ordinary-sun/thumbs/516a08d53cad57.jpg"
-        },
-        {
-          "file": "projects/no-ordinary-sun/shot_compressed.jpg",
-          "alt": "no ordinary sun — shot compressed",
-          "thumb": "projects/no-ordinary-sun/thumbs/024f554cc3da65.jpg"
-        },
-        {
-          "file": "projects/no-ordinary-sun/waddlecolumn_compressed.jpg",
-          "alt": "no ordinary sun — waddlecolumn compressed",
-          "thumb": "projects/no-ordinary-sun/thumbs/c9550c76103763.jpg"
-        },
-        {
-          "file": "projects/no-ordinary-sun/walkcycle.mkv",
-          "alt": "no ordinary sun — walkcycle",
-          "thumb": "projects/no-ordinary-sun/thumbs/a80c8a4087fe62.jpg",
-          "type": "video",
-          "poster": "projects/no-ordinary-sun/poster.jpg"
-        },
-        {
-          "file": "projects/no-ordinary-sun/warning_compressed.jpg",
-          "alt": "no ordinary sun — warning compressed",
-          "thumb": "projects/no-ordinary-sun/thumbs/bc900db2a6b89f.jpg"
-        },
-        {
-          "file": "projects/no-ordinary-sun/webstuff-p13-006.png",
-          "alt": "no ordinary sun — webstuff p13 006",
-          "thumb": "projects/no-ordinary-sun/thumbs/a23a333dd7f15e.jpg"
-        },
-        {
-          "file": "projects/no-ordinary-sun/webstuff-p34-039.png",
-          "alt": "no ordinary sun — webstuff p34 039",
-          "thumb": "projects/no-ordinary-sun/thumbs/c86fbc99e32b67.jpg"
-        },
-        {
-          "file": "projects/no-ordinary-sun/webstuff-p36-043.png",
-          "alt": "no ordinary sun — webstuff p36 043",
-          "thumb": "projects/no-ordinary-sun/thumbs/5de228ca008edb.jpg"
-        },
-        {
-          "file": "projects/no-ordinary-sun/webstuff-p40-050.png",
-          "alt": "no ordinary sun — webstuff p40 050",
-          "thumb": "projects/no-ordinary-sun/thumbs/b62808cd231b30.jpg"
-        },
-        {
-          "file": "projects/no-ordinary-sun/webstuff-p41-051.png",
-          "alt": "no ordinary sun — webstuff p41 051",
-          "thumb": "projects/no-ordinary-sun/thumbs/8f7c81ffc24f54.jpg"
-        },
-        {
-          "file": "projects/no-ordinary-sun/webstuff-p41-052.png",
-          "alt": "no ordinary sun — webstuff p41 052",
-          "thumb": "projects/no-ordinary-sun/thumbs/54bac2950a9412.jpg"
-        },
-        {
-          "file": "projects/no-ordinary-sun/webstuff-p42-054.png",
-          "alt": "no ordinary sun — webstuff p42 054",
-          "thumb": "projects/no-ordinary-sun/thumbs/39874b727f7862.jpg"
-        },
-        {
-          "file": "projects/molec/cover.png",
-          "alt": "molec — cover",
-          "thumb": "projects/molec/thumbs/f30a202d97fcb7.jpg"
-        },
-        {
-          "file": "projects/molec/bioluminescnet.webp",
-          "alt": "molec — bioluminescnet",
-          "thumb": "projects/molec/thumbs/0c49926a4c1957.jpg"
-        },
-        {
-          "file": "projects/molec/editor.png",
-          "alt": "molec — editor",
-          "thumb": "projects/molec/thumbs/b89f67dd50af99.jpg"
-        }
-      ]
-    },
-    {
-      "folder": "Microphotography",
-      "title": "Microphotography",
-      "images": [
-        {
-          "file": "Microphotography/m-12x12_pulse.jpg",
-          "alt": "m 12x12 pulse",
-          "thumb": "thumbs/fd7328cd239dd5.jpg"
-        },
-        {
-          "file": "Microphotography/m-15x55_gift2.jpg",
-          "alt": "m 15x55 gift2",
-          "thumb": "thumbs/975a658aef8661.jpg"
-        },
-        {
-          "file": "Microphotography/m-3x4WhiteTail.jpg",
-          "alt": "m 3x4WhiteTail",
-          "thumb": "thumbs/5b8542643e4519.jpg"
-        },
-        {
-          "file": "Microphotography/m-6x8_cicada.jpg",
-          "alt": "m 6x8 cicada",
-          "thumb": "thumbs/837560d26ddcd8.jpg"
-        },
-        {
-          "file": "Microphotography/m-6x8_Monarch.jpg",
-          "alt": "m 6x8 Monarch",
-          "thumb": "thumbs/46bff5a60e9b19.jpg"
-        },
-        {
-          "file": "Microphotography/m-6x8_PauaMantle.jpg",
-          "alt": "m 6x8 PauaMantle",
-          "thumb": "thumbs/cb3f14c269dd80.jpg"
-        },
-        {
-          "file": "Microphotography/m-6x8resinwings.jpg",
-          "alt": "m 6x8resinwings",
-          "thumb": "thumbs/d9f91bc9139a43.jpg"
-        },
-        {
-          "file": "Microphotography/m-9x16_bloodblackhole.jpg",
-          "alt": "m 9x16 bloodblackhole",
-          "thumb": "thumbs/4051e991cd53d6.jpg"
-        },
-        {
-          "file": "Microphotography/m-9x16SativaTower.jpg",
-          "alt": "m 9x16SativaTower",
-          "thumb": "thumbs/2fab5178dfa1f5.jpg"
-        },
-        {
-          "file": "Microphotography/m-a4_Lord Of the Fly.jpg",
-          "alt": "m a4 Lord Of the Fly",
-          "thumb": "thumbs/cebe41b3715aa0.jpg"
-        },
-        {
-          "file": "Microphotography/m-A4_TeWai.jpg",
-          "alt": "m A4 TeWai",
-          "thumb": "thumbs/6dd62903d3ebee.jpg"
-        },
-        {
-          "file": "Microphotography/m-A4_WaspWings.jpg",
-          "alt": "m A4 WaspWings",
-          "thumb": "thumbs/bb44d014698f80.jpg"
-        },
-        {
-          "file": "Microphotography/m-a4seuss.jpg",
-          "alt": "m a4seuss",
-          "thumb": "thumbs/6199f76e41ff8e.jpg"
-        },
-        {
-          "file": "Microphotography/m-alientrees.jpg",
-          "alt": "m alientrees",
-          "thumb": "thumbs/17ab1d2a45f074.jpg"
-        },
-        {
-          "file": "Microphotography/m-anthersjack.jpg",
-          "alt": "m anthersjack",
-          "thumb": "thumbs/af2b555fbe9bb5.jpg"
-        },
-        {
-          "file": "Microphotography/m-BlueLotus.jpg",
-          "alt": "m BlueLotus",
-          "thumb": "thumbs/a2f7f0eebd7536.jpg"
-        },
-        {
-          "file": "Microphotography/m-cd2.jpg",
-          "alt": "m cd2",
-          "thumb": "thumbs/343df4538b891e.jpg"
-        },
-        {
-          "file": "Microphotography/m-clottingnetwork.jpg",
-          "alt": "m clottingnetwork",
-          "thumb": "thumbs/a710cc2f906806.jpg"
-        },
-        {
-          "file": "Microphotography/m-cogs2.jpg",
-          "alt": "m cogs2",
-          "thumb": "thumbs/6f5de8ffbb0867.jpg"
-        },
-        {
-          "file": "Microphotography/m-copper1.jpg",
-          "alt": "m copper1",
-          "thumb": "thumbs/54fcbedf92c388.jpg"
-        },
-        {
-          "file": "Microphotography/m-dragonite.jpg",
-          "alt": "m dragonite",
-          "thumb": "thumbs/0e77d41e6fbd6c.jpg"
-        },
-        {
-          "file": "Microphotography/m-edgeofflywing.jpg",
-          "alt": "m edgeofflywing",
-          "thumb": "thumbs/f0721d3c467265.jpg"
-        },
-        {
-          "file": "Microphotography/m-elementss4.jpg",
-          "alt": "m elementss4",
-          "thumb": "thumbs/ac54467080b0f7.jpg"
-        },
-        {
-          "file": "Microphotography/m-eye.jpg",
-          "alt": "m eye",
-          "thumb": "thumbs/31cc01e36da568.jpg"
-        },
-        {
-          "file": "Microphotography/m-fluxcapcitor.jpg",
-          "alt": "m fluxcapcitor",
-          "thumb": "thumbs/5e19201320f8f2.jpg"
-        },
-        {
-          "file": "Microphotography/m-glue monsters.jpg",
-          "alt": "m glue monsters",
-          "thumb": "thumbs/f14bbed1adbdc9.jpg"
-        },
-        {
-          "file": "Microphotography/m-halo.jpg",
-          "alt": "m halo",
-          "thumb": "thumbs/6b88ab06cbca64.jpg"
-        },
-        {
-          "file": "Microphotography/m-ice20231006173919290.jpg",
-          "alt": "m ice20231006173919290",
-          "thumb": "thumbs/8be6b2de3dc038.jpg"
-        },
-        {
-          "file": "Microphotography/m-Ice20231007072334965.jpg",
-          "alt": "m Ice20231007072334965",
-          "thumb": "thumbs/c041b5a8f2969a.jpg"
-        },
-        {
-          "file": "Microphotography/m-island.jpg",
-          "alt": "m island",
-          "thumb": "thumbs/2b504b9abca9fe.jpg"
-        },
-        {
-          "file": "Microphotography/m-kakariki.jpg",
-          "alt": "m kakariki",
-          "thumb": "thumbs/aebdae7f3fec08.jpg"
-        },
-        {
-          "file": "Microphotography/m-karearea.jpg",
-          "alt": "m karearea",
-          "thumb": "thumbs/237ccbcbccb1b0.jpg"
-        },
-        {
-          "file": "Microphotography/m-lablarge.jpg",
-          "alt": "m lablarge",
-          "thumb": "thumbs/360fbcdcebbcbb.jpg"
-        },
-        {
-          "file": "Microphotography/m-labrainbows.jpg",
-          "alt": "m labrainbows",
-          "thumb": "thumbs/06af39324ed48a.jpg"
-        },
-        {
-          "file": "Microphotography/m-LeafStomataeVein.jpg",
-          "alt": "m LeafStomataeVein",
-          "thumb": "thumbs/50e41f032603d1.jpg"
-        },
-        {
-          "file": "Microphotography/m-lonelystar.jpg",
-          "alt": "m lonelystar",
-          "thumb": "thumbs/fd92021067db2d.jpg"
-        },
-        {
-          "file": "Microphotography/m-mitosis_noisered.jpg",
-          "alt": "m mitosis noisered",
-          "thumb": "thumbs/be1ee060dbac73.jpg"
-        },
-        {
-          "file": "Microphotography/m-moneys.jpg",
-          "alt": "m moneys",
-          "thumb": "thumbs/59ce618a186907.jpg"
-        },
-        {
-          "file": "Microphotography/m-moodynebula.jpg",
-          "alt": "m moodynebula",
-          "thumb": "thumbs/27458ed7bea3b6.jpg"
-        },
-        {
-          "file": "Microphotography/m-mothwings.jpg",
-          "alt": "m mothwings",
-          "thumb": "thumbs/f2387d50d907f5.jpg"
-        },
-        {
-          "file": "Microphotography/m-mussel.jpg",
-          "alt": "m mussel",
-          "thumb": "thumbs/4fa6c3136244f0.jpg"
-        },
-        {
-          "file": "Microphotography/m-pounamuwaves.jpg",
-          "alt": "m pounamuwaves",
-          "thumb": "thumbs/850073ec48bb03.jpg"
-        },
-        {
-          "file": "Microphotography/m-ridges2.jpg",
-          "alt": "m ridges2",
-          "thumb": "thumbs/0dae9d94e0b55a.jpg"
-        },
-        {
-          "file": "Microphotography/m-seepers.jpg",
-          "alt": "m seepers",
-          "thumb": "thumbs/0f5fbbc426626a.jpg"
-        },
-        {
-          "file": "Microphotography/m-ser2.jpg",
-          "alt": "m ser2",
-          "thumb": "thumbs/ff1d5dc8c2ef06.jpg"
-        },
-        {
-          "file": "Microphotography/m-ser3.jpg",
-          "alt": "m ser3",
-          "thumb": "thumbs/8f6ab694e90d77.jpg"
-        },
-        {
-          "file": "Microphotography/m-ser5.jpg",
-          "alt": "m ser5",
-          "thumb": "thumbs/2cb50ad5d99ff1.jpg"
-        },
-        {
-          "file": "Microphotography/m-ser6.jpg",
-          "alt": "m ser6",
-          "thumb": "thumbs/ef0450082f7196.jpg"
-        },
-        {
-          "file": "Microphotography/m-seusspaints.jpg",
-          "alt": "m seusspaints",
-          "thumb": "thumbs/62861a038e4aa3.jpg"
-        },
-        {
-          "file": "Microphotography/m-shallows1.jpg",
-          "alt": "m shallows1",
-          "thumb": "thumbs/de7a8fd65cc171.jpg"
-        },
-        {
-          "file": "Microphotography/m-shelob aquaduct.jpg",
-          "alt": "m shelob aquaduct",
-          "thumb": "thumbs/418b85474dccc7.jpg"
-        },
-        {
-          "file": "Microphotography/m-southernalps.jpg",
-          "alt": "m southernalps",
-          "thumb": "thumbs/d8ae7c57dc0f7a.jpg"
-        },
-        {
-          "file": "Microphotography/m-Stomatae.jpg",
-          "alt": "m Stomatae",
-          "thumb": "thumbs/2fa76afd336b05.jpg"
-        },
-        {
-          "file": "Microphotography/m-sunken.jpg",
-          "alt": "m sunken",
-          "thumb": "thumbs/81f131510e7def.jpg"
-        },
-        {
-          "file": "Microphotography/m-thirds.jpg",
-          "alt": "m thirds",
-          "thumb": "thumbs/b4ef504ad30797.jpg"
-        },
-        {
-          "file": "Microphotography/mA3_TeKorokoro.jpg",
-          "alt": "mA3 TeKorokoro",
-          "thumb": "thumbs/d93bfc7b5f6986.jpg"
-        },
-        {
-          "file": "projects/into-ocean-ice/cover.png",
-          "alt": "into ocean ice — cover",
-          "thumb": "projects/into-ocean-ice/thumbs/f30a202d97fcb7.jpg"
-        },
-        {
-          "file": "projects/into-ocean-ice/ice.jpg",
-          "alt": "into ocean ice — ice",
-          "thumb": "projects/into-ocean-ice/thumbs/88d28f4a269986.jpg"
-        },
-        {
-          "file": "projects/into-ocean-ice/ice20231006173919290.jpg",
-          "alt": "into ocean ice — ice20231006173919290",
-          "thumb": "projects/into-ocean-ice/thumbs/d9504e13b20cf8.jpg"
-        },
-        {
-          "file": "projects/into-ocean-ice/webstuff-p48-059.png",
-          "alt": "into ocean ice — webstuff p48 059",
-          "thumb": "projects/into-ocean-ice/thumbs/aadee6754b85ab.jpg"
-        },
-        {
-          "file": "projects/wanaka-arts-residency/cover.png",
-          "alt": "wanaka arts residency — cover",
-          "thumb": "projects/wanaka-arts-residency/thumbs/f30a202d97fcb7.jpg"
-        },
-        {
-          "file": "projects/wanaka-arts-residency/webstuff-p53-063.png",
-          "alt": "wanaka arts residency — webstuff p53 063",
-          "thumb": "projects/wanaka-arts-residency/thumbs/9b58a943e72854.jpg"
-        },
-        {
-          "file": "projects/wanaka-arts-residency/webstuff-p54-064.png",
-          "alt": "wanaka arts residency — webstuff p54 064",
-          "thumb": "projects/wanaka-arts-residency/thumbs/2946e6e28e14ac.jpg"
-        },
-        {
-          "file": "projects/wanaka-arts-residency/webstuff-p54-065.png",
-          "alt": "wanaka arts residency — webstuff p54 065",
-          "thumb": "projects/wanaka-arts-residency/thumbs/cbed0c7c4f77c3.jpg"
-        },
-        {
-          "file": "projects/wanaka-arts-residency/webstuff-p55-066.png",
-          "alt": "wanaka arts residency — webstuff p55 066",
-          "thumb": "projects/wanaka-arts-residency/thumbs/399b69ad50f3d6.jpg"
-        },
-        {
-          "file": "projects/wanaka-arts-residency/webstuff-p55-067.png",
-          "alt": "wanaka arts residency — webstuff p55 067",
-          "thumb": "projects/wanaka-arts-residency/thumbs/200e10d866231f.jpg"
-        },
-        {
-          "file": "projects/wanaka-arts-residency/webstuff-p58-070.png",
-          "alt": "wanaka arts residency — webstuff p58 070",
-          "thumb": "projects/wanaka-arts-residency/thumbs/36605513f5e0bb.jpg"
-        },
-        {
-          "file": "projects/wanaka-arts-residency/webstuff-p60-072.png",
-          "alt": "wanaka arts residency — webstuff p60 072",
-          "thumb": "projects/wanaka-arts-residency/thumbs/7af8043003fbb7.jpg"
-        }
-      ]
-    }
-  ]
+    "version":  1780487858345,
+    "groups":  [
+                   {
+                       "folder":  "3D_and_Game",
+                       "title":  "3D and Game",
+                       "images":  [
+                                      {
+                                          "file":  "3D_and_Game/nos.jpg",
+                                          "alt":  "nos",
+                                          "thumb":  "thumbs/403d9a09aa51de.jpg"
+                                      },
+                                      {
+                                          "file":  "3D_and_Game/w.png",
+                                          "alt":  "w",
+                                          "thumb":  "thumbs/814806f3653d78.jpg"
+                                      },
+                                      {
+                                          "file":  "3D_and_Game/webstuff-p21-023.png",
+                                          "alt":  "webstuff p21 023",
+                                          "thumb":  "thumbs/5c54a262e50040.jpg"
+                                      },
+                                      {
+                                          "file":  "3D_and_Game/webstuff-p22-024.png",
+                                          "alt":  "webstuff p22 024",
+                                          "thumb":  "thumbs/49289663bf41e1.jpg"
+                                      },
+                                      {
+                                          "file":  "3D_and_Game/webstuff-p25-030.png",
+                                          "alt":  "webstuff p25 030",
+                                          "thumb":  "thumbs/3d734048e53137.jpg"
+                                      },
+                                      {
+                                          "file":  "3D_and_Game/x.png",
+                                          "alt":  "x",
+                                          "thumb":  "thumbs/af2e91c9b2e43c.jpg"
+                                      },
+                                      {
+                                          "file":  "3D_and_Game/y.png",
+                                          "alt":  "y",
+                                          "thumb":  "thumbs/fe21768a13cf8d.jpg"
+                                      },
+                                      {
+                                          "file":  "3D_and_Game/z.png",
+                                          "alt":  "z",
+                                          "thumb":  "thumbs/6af3906ba2b98b.jpg"
+                                      },
+                                      {
+                                          "file":  "3D_and_Game/zz.jpg",
+                                          "alt":  "zz",
+                                          "thumb":  "thumbs/2161699ad09dab.jpg"
+                                      },
+                                      {
+                                          "file":  "projects/hoot/900x_dark_City_14.png",
+                                          "alt":  "hoot - 900x dark City 14",
+                                          "thumb":  "projects/hoot/thumbs/cdd14c2ce559f6.jpg"
+                                      },
+                                      {
+                                          "file":  "projects/hoot/900x_dark_City_20.png",
+                                          "alt":  "hoot - 900x dark City 20",
+                                          "thumb":  "projects/hoot/thumbs/3418022c7bc604.jpg"
+                                      },
+                                      {
+                                          "file":  "projects/hoot/900x_dark_City_25_hr.png",
+                                          "alt":  "hoot - 900x dark City 25 hr",
+                                          "thumb":  "projects/hoot/thumbs/c33c0ca484c784.jpg"
+                                      },
+                                      {
+                                          "file":  "projects/hoot/brambles-1024.png",
+                                          "alt":  "hoot - brambles 1024",
+                                          "thumb":  "projects/hoot/thumbs/f0700281208f2d.jpg"
+                                      },
+                                      {
+                                          "file":  "projects/hoot/City_3.png",
+                                          "alt":  "hoot - City 3",
+                                          "thumb":  "projects/hoot/thumbs/894cd1686320fd.jpg"
+                                      },
+                                      {
+                                          "file":  "projects/hoot/dark_bridge2.png",
+                                          "alt":  "hoot - dark bridge2",
+                                          "thumb":  "projects/hoot/thumbs/fa0a0a2721fd80.jpg"
+                                      },
+                                      {
+                                          "file":  "projects/hoot/hoo11.png",
+                                          "alt":  "hoot - hoo11",
+                                          "thumb":  "projects/hoot/thumbs/50022a28a9cb57.jpg"
+                                      },
+                                      {
+                                          "file":  "projects/hoot/hoo15_pataka4.png",
+                                          "alt":  "hoot - hoo15 pataka4",
+                                          "thumb":  "projects/hoot/thumbs/d70c38ffe05687.jpg"
+                                      },
+                                      {
+                                          "file":  "projects/hoot/hoo4.png",
+                                          "alt":  "hoot - hoo4",
+                                          "thumb":  "projects/hoot/thumbs/0742aee5b97298.jpg"
+                                      },
+                                      {
+                                          "file":  "projects/hoot/village_homes_2.png",
+                                          "alt":  "hoot - village homes 2",
+                                          "thumb":  "projects/hoot/thumbs/88e71b0a13b953.jpg"
+                                      },
+                                      {
+                                          "file":  "projects/hoot/village_homes.png",
+                                          "alt":  "hoot - village homes",
+                                          "thumb":  "projects/hoot/thumbs/285a990700a9ca.jpg"
+                                      },
+                                      {
+                                          "file":  "projects/hoot/webstuff-p16-015.png",
+                                          "alt":  "hoot - webstuff p16 015",
+                                          "thumb":  "projects/hoot/thumbs/d00eb31004ddad.jpg"
+                                      },
+                                      {
+                                          "file":  "projects/no-ordinary-sun/cover.PNG",
+                                          "alt":  "no ordinary sun - cover",
+                                          "thumb":  "projects/no-ordinary-sun/thumbs/0d8b16d189f1e3.jpg"
+                                      },
+                                      {
+                                          "file":  "projects/no-ordinary-sun/bigbird.png",
+                                          "alt":  "no ordinary sun - bigbird",
+                                          "thumb":  "projects/no-ordinary-sun/thumbs/6b3228de19f16b.jpg"
+                                      },
+                                      {
+                                          "file":  "projects/no-ordinary-sun/Hyde_Peregrin_A2_Comparison.jpg",
+                                          "alt":  "no ordinary sun - Hyde Peregrin A2 Comparison",
+                                          "thumb":  "projects/no-ordinary-sun/thumbs/bd111819f99e8c.jpg"
+                                      },
+                                      {
+                                          "file":  "projects/no-ordinary-sun/poster.jpg",
+                                          "alt":  "no ordinary sun - poster",
+                                          "thumb":  "projects/no-ordinary-sun/thumbs/516a08d53cad57.jpg"
+                                      },
+                                      {
+                                          "file":  "projects/no-ordinary-sun/shot_compressed.jpg",
+                                          "alt":  "no ordinary sun - shot compressed",
+                                          "thumb":  "projects/no-ordinary-sun/thumbs/024f554cc3da65.jpg"
+                                      },
+                                      {
+                                          "file":  "projects/no-ordinary-sun/waddlecolumn_compressed.jpg",
+                                          "alt":  "no ordinary sun - waddlecolumn compressed",
+                                          "thumb":  "projects/no-ordinary-sun/thumbs/c9550c76103763.jpg"
+                                      },
+                                      {
+                                          "file":  "projects/no-ordinary-sun/walkcycle.mkv",
+                                          "alt":  "no ordinary sun - walkcycle",
+                                          "thumb":  "projects/no-ordinary-sun/thumbs/a80c8a4087fe62.jpg"
+                                      },
+                                      {
+                                          "file":  "projects/no-ordinary-sun/warning_compressed.jpg",
+                                          "alt":  "no ordinary sun - warning compressed",
+                                          "thumb":  "projects/no-ordinary-sun/thumbs/bc900db2a6b89f.jpg"
+                                      },
+                                      {
+                                          "file":  "projects/no-ordinary-sun/webstuff-p13-006.png",
+                                          "alt":  "no ordinary sun - webstuff p13 006",
+                                          "thumb":  "projects/no-ordinary-sun/thumbs/a23a333dd7f15e.jpg"
+                                      },
+                                      {
+                                          "file":  "projects/no-ordinary-sun/webstuff-p34-039.png",
+                                          "alt":  "no ordinary sun - webstuff p34 039",
+                                          "thumb":  "projects/no-ordinary-sun/thumbs/c86fbc99e32b67.jpg"
+                                      },
+                                      {
+                                          "file":  "projects/no-ordinary-sun/webstuff-p36-043.png",
+                                          "alt":  "no ordinary sun - webstuff p36 043",
+                                          "thumb":  "projects/no-ordinary-sun/thumbs/5de228ca008edb.jpg"
+                                      },
+                                      {
+                                          "file":  "projects/no-ordinary-sun/webstuff-p40-050.png",
+                                          "alt":  "no ordinary sun - webstuff p40 050",
+                                          "thumb":  "projects/no-ordinary-sun/thumbs/b62808cd231b30.jpg"
+                                      },
+                                      {
+                                          "file":  "projects/no-ordinary-sun/webstuff-p41-051.png",
+                                          "alt":  "no ordinary sun - webstuff p41 051",
+                                          "thumb":  "projects/no-ordinary-sun/thumbs/8f7c81ffc24f54.jpg"
+                                      },
+                                      {
+                                          "file":  "projects/no-ordinary-sun/webstuff-p41-052.png",
+                                          "alt":  "no ordinary sun - webstuff p41 052",
+                                          "thumb":  "projects/no-ordinary-sun/thumbs/54bac2950a9412.jpg"
+                                      },
+                                      {
+                                          "file":  "projects/no-ordinary-sun/webstuff-p42-054.png",
+                                          "alt":  "no ordinary sun - webstuff p42 054",
+                                          "thumb":  "projects/no-ordinary-sun/thumbs/39874b727f7862.jpg"
+                                      },
+                                      {
+                                          "file":  "projects/molec/cover.png",
+                                          "alt":  "molec - cover",
+                                          "thumb":  "projects/molec/thumbs/f30a202d97fcb7.jpg"
+                                      },
+                                      {
+                                          "file":  "projects/molec/bioluminescnet.webp",
+                                          "alt":  "molec - bioluminescnet",
+                                          "thumb":  "projects/molec/thumbs/0c49926a4c1957.jpg"
+                                      },
+                                      {
+                                          "file":  "projects/molec/editor.png",
+                                          "alt":  "molec - editor",
+                                          "thumb":  "projects/molec/thumbs/b89f67dd50af99.jpg"
+                                      }
+                                  ]
+                   },
+                   {
+                       "folder":  "Microphotography",
+                       "title":  "Microphotography",
+                       "images":  [
+                                      {
+                                          "file":  "Microphotography/m-12x12_pulse.jpg",
+                                          "alt":  "m 12x12 pulse",
+                                          "thumb":  "thumbs/fd7328cd239dd5.jpg"
+                                      },
+                                      {
+                                          "file":  "Microphotography/m-15x55_gift2.jpg",
+                                          "alt":  "m 15x55 gift2",
+                                          "thumb":  "thumbs/975a658aef8661.jpg"
+                                      },
+                                      {
+                                          "file":  "Microphotography/m-3x4WhiteTail.jpg",
+                                          "alt":  "m 3x4WhiteTail",
+                                          "thumb":  "thumbs/5b8542643e4519.jpg"
+                                      },
+                                      {
+                                          "file":  "Microphotography/m-6x8_cicada.jpg",
+                                          "alt":  "m 6x8 cicada",
+                                          "thumb":  "thumbs/837560d26ddcd8.jpg"
+                                      },
+                                      {
+                                          "file":  "Microphotography/m-6x8_Monarch.jpg",
+                                          "alt":  "m 6x8 Monarch",
+                                          "thumb":  "thumbs/46bff5a60e9b19.jpg"
+                                      },
+                                      {
+                                          "file":  "Microphotography/m-6x8_PauaMantle.jpg",
+                                          "alt":  "m 6x8 PauaMantle",
+                                          "thumb":  "thumbs/cb3f14c269dd80.jpg"
+                                      },
+                                      {
+                                          "file":  "Microphotography/m-6x8resinwings.jpg",
+                                          "alt":  "m 6x8resinwings",
+                                          "thumb":  "thumbs/d9f91bc9139a43.jpg"
+                                      },
+                                      {
+                                          "file":  "Microphotography/m-9x16_bloodblackhole.jpg",
+                                          "alt":  "m 9x16 bloodblackhole",
+                                          "thumb":  "thumbs/4051e991cd53d6.jpg"
+                                      },
+                                      {
+                                          "file":  "Microphotography/m-9x16SativaTower.jpg",
+                                          "alt":  "m 9x16SativaTower",
+                                          "thumb":  "thumbs/2fab5178dfa1f5.jpg"
+                                      },
+                                      {
+                                          "file":  "Microphotography/mA3_TeKorokoro.jpg",
+                                          "alt":  "mA3 TeKorokoro",
+                                          "thumb":  "thumbs/d93bfc7b5f6986.jpg"
+                                      },
+                                      {
+                                          "file":  "Microphotography/m-a4_Lord Of the Fly.jpg",
+                                          "alt":  "m a4 Lord Of the Fly",
+                                          "thumb":  "thumbs/cebe41b3715aa0.jpg"
+                                      },
+                                      {
+                                          "file":  "Microphotography/m-A4_TeWai.jpg",
+                                          "alt":  "m A4 TeWai",
+                                          "thumb":  "thumbs/6dd62903d3ebee.jpg"
+                                      },
+                                      {
+                                          "file":  "Microphotography/m-A4_WaspWings.jpg",
+                                          "alt":  "m A4 WaspWings",
+                                          "thumb":  "thumbs/bb44d014698f80.jpg"
+                                      },
+                                      {
+                                          "file":  "Microphotography/m-a4seuss.jpg",
+                                          "alt":  "m a4seuss",
+                                          "thumb":  "thumbs/6199f76e41ff8e.jpg"
+                                      },
+                                      {
+                                          "file":  "Microphotography/m-alientrees.jpg",
+                                          "alt":  "m alientrees",
+                                          "thumb":  "thumbs/17ab1d2a45f074.jpg"
+                                      },
+                                      {
+                                          "file":  "Microphotography/m-anthersjack.jpg",
+                                          "alt":  "m anthersjack",
+                                          "thumb":  "thumbs/af2b555fbe9bb5.jpg"
+                                      },
+                                      {
+                                          "file":  "Microphotography/m-BlueLotus.jpg",
+                                          "alt":  "m BlueLotus",
+                                          "thumb":  "thumbs/a2f7f0eebd7536.jpg"
+                                      },
+                                      {
+                                          "file":  "Microphotography/m-cd2.jpg",
+                                          "alt":  "m cd2",
+                                          "thumb":  "thumbs/343df4538b891e.jpg"
+                                      },
+                                      {
+                                          "file":  "Microphotography/m-clottingnetwork.jpg",
+                                          "alt":  "m clottingnetwork",
+                                          "thumb":  "thumbs/a710cc2f906806.jpg"
+                                      },
+                                      {
+                                          "file":  "Microphotography/m-cogs2.jpg",
+                                          "alt":  "m cogs2",
+                                          "thumb":  "thumbs/6f5de8ffbb0867.jpg"
+                                      },
+                                      {
+                                          "file":  "Microphotography/m-copper1.jpg",
+                                          "alt":  "m copper1",
+                                          "thumb":  "thumbs/54fcbedf92c388.jpg"
+                                      },
+                                      {
+                                          "file":  "Microphotography/m-dragonite.jpg",
+                                          "alt":  "m dragonite",
+                                          "thumb":  "thumbs/0e77d41e6fbd6c.jpg"
+                                      },
+                                      {
+                                          "file":  "Microphotography/m-edgeofflywing.jpg",
+                                          "alt":  "m edgeofflywing",
+                                          "thumb":  "thumbs/f0721d3c467265.jpg"
+                                      },
+                                      {
+                                          "file":  "Microphotography/m-elementss4.jpg",
+                                          "alt":  "m elementss4",
+                                          "thumb":  "thumbs/ac54467080b0f7.jpg"
+                                      },
+                                      {
+                                          "file":  "Microphotography/m-eye.jpg",
+                                          "alt":  "m eye",
+                                          "thumb":  "thumbs/31cc01e36da568.jpg"
+                                      },
+                                      {
+                                          "file":  "Microphotography/m-fluxcapcitor.jpg",
+                                          "alt":  "m fluxcapcitor",
+                                          "thumb":  "thumbs/5e19201320f8f2.jpg"
+                                      },
+                                      {
+                                          "file":  "Microphotography/m-glue monsters.jpg",
+                                          "alt":  "m glue monsters",
+                                          "thumb":  "thumbs/f14bbed1adbdc9.jpg"
+                                      },
+                                      {
+                                          "file":  "Microphotography/m-halo.jpg",
+                                          "alt":  "m halo",
+                                          "thumb":  "thumbs/6b88ab06cbca64.jpg"
+                                      },
+                                      {
+                                          "file":  "Microphotography/m-ice20231006173919290.jpg",
+                                          "alt":  "m ice20231006173919290",
+                                          "thumb":  "thumbs/8be6b2de3dc038.jpg"
+                                      },
+                                      {
+                                          "file":  "Microphotography/m-Ice20231007072334965.jpg",
+                                          "alt":  "m Ice20231007072334965",
+                                          "thumb":  "thumbs/c041b5a8f2969a.jpg"
+                                      },
+                                      {
+                                          "file":  "Microphotography/m-island.jpg",
+                                          "alt":  "m island",
+                                          "thumb":  "thumbs/2b504b9abca9fe.jpg"
+                                      },
+                                      {
+                                          "file":  "Microphotography/m-kakariki.jpg",
+                                          "alt":  "m kakariki",
+                                          "thumb":  "thumbs/aebdae7f3fec08.jpg"
+                                      },
+                                      {
+                                          "file":  "Microphotography/m-karearea.jpg",
+                                          "alt":  "m karearea",
+                                          "thumb":  "thumbs/237ccbcbccb1b0.jpg"
+                                      },
+                                      {
+                                          "file":  "Microphotography/m-lablarge.jpg",
+                                          "alt":  "m lablarge",
+                                          "thumb":  "thumbs/360fbcdcebbcbb.jpg"
+                                      },
+                                      {
+                                          "file":  "Microphotography/m-labrainbows.jpg",
+                                          "alt":  "m labrainbows",
+                                          "thumb":  "thumbs/06af39324ed48a.jpg"
+                                      },
+                                      {
+                                          "file":  "Microphotography/m-LeafStomataeVein.jpg",
+                                          "alt":  "m LeafStomataeVein",
+                                          "thumb":  "thumbs/50e41f032603d1.jpg"
+                                      },
+                                      {
+                                          "file":  "Microphotography/m-lonelystar.jpg",
+                                          "alt":  "m lonelystar",
+                                          "thumb":  "thumbs/fd92021067db2d.jpg"
+                                      },
+                                      {
+                                          "file":  "Microphotography/m-mitosis_noisered.jpg",
+                                          "alt":  "m mitosis noisered",
+                                          "thumb":  "thumbs/be1ee060dbac73.jpg"
+                                      },
+                                      {
+                                          "file":  "Microphotography/m-moneys.jpg",
+                                          "alt":  "m moneys",
+                                          "thumb":  "thumbs/59ce618a186907.jpg"
+                                      },
+                                      {
+                                          "file":  "Microphotography/m-moodynebula.jpg",
+                                          "alt":  "m moodynebula",
+                                          "thumb":  "thumbs/27458ed7bea3b6.jpg"
+                                      },
+                                      {
+                                          "file":  "Microphotography/m-mothwings.jpg",
+                                          "alt":  "m mothwings",
+                                          "thumb":  "thumbs/f2387d50d907f5.jpg"
+                                      },
+                                      {
+                                          "file":  "Microphotography/m-mussel.jpg",
+                                          "alt":  "m mussel",
+                                          "thumb":  "thumbs/4fa6c3136244f0.jpg"
+                                      },
+                                      {
+                                          "file":  "Microphotography/m-pounamuwaves.jpg",
+                                          "alt":  "m pounamuwaves",
+                                          "thumb":  "thumbs/850073ec48bb03.jpg"
+                                      },
+                                      {
+                                          "file":  "Microphotography/m-ridges2.jpg",
+                                          "alt":  "m ridges2",
+                                          "thumb":  "thumbs/0dae9d94e0b55a.jpg"
+                                      },
+                                      {
+                                          "file":  "Microphotography/m-seepers.jpg",
+                                          "alt":  "m seepers",
+                                          "thumb":  "thumbs/0f5fbbc426626a.jpg"
+                                      },
+                                      {
+                                          "file":  "Microphotography/m-ser2.jpg",
+                                          "alt":  "m ser2",
+                                          "thumb":  "thumbs/ff1d5dc8c2ef06.jpg"
+                                      },
+                                      {
+                                          "file":  "Microphotography/m-ser3.jpg",
+                                          "alt":  "m ser3",
+                                          "thumb":  "thumbs/8f6ab694e90d77.jpg"
+                                      },
+                                      {
+                                          "file":  "Microphotography/m-ser5.jpg",
+                                          "alt":  "m ser5",
+                                          "thumb":  "thumbs/2cb50ad5d99ff1.jpg"
+                                      },
+                                      {
+                                          "file":  "Microphotography/m-ser6.jpg",
+                                          "alt":  "m ser6",
+                                          "thumb":  "thumbs/ef0450082f7196.jpg"
+                                      },
+                                      {
+                                          "file":  "Microphotography/m-seusspaints.jpg",
+                                          "alt":  "m seusspaints",
+                                          "thumb":  "thumbs/62861a038e4aa3.jpg"
+                                      },
+                                      {
+                                          "file":  "Microphotography/m-shallows1.jpg",
+                                          "alt":  "m shallows1",
+                                          "thumb":  "thumbs/de7a8fd65cc171.jpg"
+                                      },
+                                      {
+                                          "file":  "Microphotography/m-shelob aquaduct.jpg",
+                                          "alt":  "m shelob aquaduct",
+                                          "thumb":  "thumbs/418b85474dccc7.jpg"
+                                      },
+                                      {
+                                          "file":  "Microphotography/m-southernalps.jpg",
+                                          "alt":  "m southernalps",
+                                          "thumb":  "thumbs/d8ae7c57dc0f7a.jpg"
+                                      },
+                                      {
+                                          "file":  "Microphotography/m-Stomatae.jpg",
+                                          "alt":  "m Stomatae",
+                                          "thumb":  "thumbs/2fa76afd336b05.jpg"
+                                      },
+                                      {
+                                          "file":  "Microphotography/m-sunken.jpg",
+                                          "alt":  "m sunken",
+                                          "thumb":  "thumbs/81f131510e7def.jpg"
+                                      },
+                                      {
+                                          "file":  "Microphotography/m-thirds.jpg",
+                                          "alt":  "m thirds",
+                                          "thumb":  "thumbs/b4ef504ad30797.jpg"
+                                      },
+                                      {
+                                          "file":  "projects/into-ocean-ice/cover.png",
+                                          "alt":  "into ocean ice - cover",
+                                          "thumb":  "projects/into-ocean-ice/thumbs/f30a202d97fcb7.jpg"
+                                      },
+                                      {
+                                          "file":  "projects/into-ocean-ice/ice.jpg",
+                                          "alt":  "into ocean ice - ice",
+                                          "thumb":  "projects/into-ocean-ice/thumbs/88d28f4a269986.jpg"
+                                      },
+                                      {
+                                          "file":  "projects/into-ocean-ice/ice20231006173919290.jpg",
+                                          "alt":  "into ocean ice - ice20231006173919290",
+                                          "thumb":  "projects/into-ocean-ice/thumbs/d9504e13b20cf8.jpg"
+                                      },
+                                      {
+                                          "file":  "projects/into-ocean-ice/webstuff-p48-059.png",
+                                          "alt":  "into ocean ice - webstuff p48 059",
+                                          "thumb":  "projects/into-ocean-ice/thumbs/aadee6754b85ab.jpg"
+                                      },
+                                      {
+                                          "file":  "projects/wanaka-arts-residency/cover.png",
+                                          "alt":  "wanaka arts residency - cover",
+                                          "thumb":  "projects/wanaka-arts-residency/thumbs/f30a202d97fcb7.jpg"
+                                      },
+                                      {
+                                          "file":  "projects/wanaka-arts-residency/webstuff-p53-063.png",
+                                          "alt":  "wanaka arts residency - webstuff p53 063",
+                                          "thumb":  "projects/wanaka-arts-residency/thumbs/9b58a943e72854.jpg"
+                                      },
+                                      {
+                                          "file":  "projects/wanaka-arts-residency/webstuff-p54-064.png",
+                                          "alt":  "wanaka arts residency - webstuff p54 064",
+                                          "thumb":  "projects/wanaka-arts-residency/thumbs/2946e6e28e14ac.jpg"
+                                      },
+                                      {
+                                          "file":  "projects/wanaka-arts-residency/webstuff-p54-065.png",
+                                          "alt":  "wanaka arts residency - webstuff p54 065",
+                                          "thumb":  "projects/wanaka-arts-residency/thumbs/cbed0c7c4f77c3.jpg"
+                                      },
+                                      {
+                                          "file":  "projects/wanaka-arts-residency/webstuff-p55-066.png",
+                                          "alt":  "wanaka arts residency - webstuff p55 066",
+                                          "thumb":  "projects/wanaka-arts-residency/thumbs/399b69ad50f3d6.jpg"
+                                      },
+                                      {
+                                          "file":  "projects/wanaka-arts-residency/webstuff-p55-067.png",
+                                          "alt":  "wanaka arts residency - webstuff p55 067",
+                                          "thumb":  "projects/wanaka-arts-residency/thumbs/200e10d866231f.jpg"
+                                      },
+                                      {
+                                          "file":  "projects/wanaka-arts-residency/webstuff-p58-070.png",
+                                          "alt":  "wanaka arts residency - webstuff p58 070",
+                                          "thumb":  "projects/wanaka-arts-residency/thumbs/36605513f5e0bb.jpg"
+                                      },
+                                      {
+                                          "file":  "projects/wanaka-arts-residency/webstuff-p60-072.png",
+                                          "alt":  "wanaka arts residency - webstuff p60 072",
+                                          "thumb":  "projects/wanaka-arts-residency/thumbs/7af8043003fbb7.jpg"
+                                      }
+                                  ]
+                   }
+               ]
 }
