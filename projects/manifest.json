@@ -1,5 +1,5 @@
 {
-  "version": 1780534644952,
+  "version": 1780539228399,
   "featured": [
     {
       "slug": "molec",
@@ -45,7 +45,7 @@
       "slug": "hoot",
       "title": "Hoot",
       "href": "projects/hoot/",
-      "cover": "projects/hoot/900x_dark_City_14.png",
+      "cover": "projects/hoot/cover.png",
       "featured": true,
       "order": 5
     },
@@ -135,7 +135,7 @@
       "slug": "hoot",
       "title": "Hoot",
       "href": "projects/hoot/",
-      "cover": "projects/hoot/900x_dark_City_14.png",
+      "cover": "projects/hoot/cover.png",
       "featured": true,
       "order": 5
     },

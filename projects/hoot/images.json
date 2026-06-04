@@ -1,8 +1,13 @@
 {
-  "version": 1780534644952,
-  "cover": "900x_dark_City_14.png",
-  "hero": "900x_dark_City_14.png",
+  "version": 1780539228399,
+  "cover": "cover.png",
+  "hero": "cover.png",
   "images": [
+    {
+      "file": "cover.png",
+      "alt": "cover",
+      "thumb": "thumbs/f30a202d97fcb7.jpg"
+    },
     {
       "file": "900x_dark_City_14.png",
       "alt": "900x dark City 14",
@@ -49,6 +54,11 @@
       "thumb": "thumbs/0742aee5b97298.jpg"
     },
     {
+      "file": "Screenshot 2026-06-04 121843.png",
+      "alt": "Screenshot 2026 06 04 121843",
+      "thumb": "thumbs/ee8667434837f8.jpg"
+    },
+    {
       "file": "village_homes_2.png",
       "alt": "village homes 2",
       "thumb": "thumbs/88e71b0a13b953.jpg"
@@ -57,11 +67,6 @@
       "file": "village_homes.png",
       "alt": "village homes",
       "thumb": "thumbs/285a990700a9ca.jpg"
-    },
-    {
-      "file": "webstuff-p16-015.png",
-      "alt": "webstuff p16 015",
-      "thumb": "thumbs/d00eb31004ddad.jpg"
     }
   ]
 }
